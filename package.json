@@ -1,0 +1,26 @@
+{
+  "name": "modern-static-website",
+  "version": "1.0.0",
+  "description": "A modern, responsive static website built for Vercel deployment",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build step required'",
+    "start": "echo 'Static site - serve index.html'"
+  },
+  "keywords": [
+    "static",
+    "website",
+    "responsive",
+    "modern",
+    "vercel"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
