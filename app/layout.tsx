@@ -32,7 +32,7 @@ export default function RootLayout({
               />
             </head>
             <body className={`${inter.className} dark`}>
-              <HeroUIProvider theme="dark">
+              <HeroUIProvider>
                 {children}
               </HeroUIProvider>
             </body>
