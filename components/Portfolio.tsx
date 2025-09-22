@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { Image } from '@heroui/react'
+import { Image, Container, Stack, Title, Text, Grid, Card, Group, ThemeIcon, Box } from '@mantine/core'
 
 export default function Portfolio() {
   const portfolioRef = useRef<HTMLDivElement>(null)
@@ -68,39 +68,83 @@ export default function Portfolio() {
 
   return (
     <section id="portfolio" className="portfolio">
-      <div className="container">
-        <div className="section-header">
-          <h2>Our Work</h2>
-          <p>Custom development projects showcasing our expertise in mobile apps, FiveM, and full-stack solutions</p>
-        </div>
-        <div className="portfolio-grid" ref={portfolioRef}>
+      <Container size="xl" py={100}>
+        <Stack align="center" gap="xl" mb={60}>
+          <Title order={2} size="h1" ta="center" c="white">
+            Our Work
+          </Title>
+          <Text size="lg" c="dimmed" ta="center" maw={600}>
+            Custom development projects showcasing our expertise in mobile apps, FiveM, and full-stack solutions
+          </Text>
+        </Stack>
+
+        <Grid ref={portfolioRef}>
           {portfolioItems.map((item, index) => (
-            <div key={index} className="portfolio-item">
-              <div className="portfolio-image">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  width={300}
-                  height={200}
-                  radius="lg"
-                  shadow="md"
-                  isBlurred
-                  isZoomed
-                  className="portfolio-project-image"
-                  fallbackSrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+UHJvamVjdCBJbWFnZTwvdGV4dD4KPC9zdmc+"
-                />
-                <div className="portfolio-icon-overlay">
-                  <i className={item.icon}></i>
-                </div>
-              </div>
-              <div className="portfolio-content">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </div>
-            </div>
+            <Grid.Col key={index} span={{ base: 12, sm: 6, md: 4 }}>
+              <Card
+                shadow="sm"
+                padding="xl"
+                radius="md"
+                withBorder
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  height: '100%',
+                  transition: 'all 0.3s ease',
+                }}
+                className="portfolio-item"
+              >
+                <Stack gap="md">
+                  <Box pos="relative" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      w="100%"
+                      h={200}
+                      radius="md"
+                      style={{
+                        objectFit: 'cover',
+                        transition: 'transform 0.3s ease',
+                      }}
+                      className="portfolio-project-image"
+                    />
+                    <Box
+                      pos="absolute"
+                      top="50%"
+                      left="50%"
+                      style={{
+                        transform: 'translate(-50%, -50%)',
+                        backgroundColor: 'rgba(233, 69, 96, 0.9)',
+                        borderRadius: '50%',
+                        width: '60px',
+                        height: '60px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backdropFilter: 'blur(10px)',
+                        transition: 'all 0.3s ease',
+                      }}
+                      className="portfolio-icon-overlay"
+                    >
+                      <i className={item.icon} style={{ color: 'white', fontSize: '1.5rem' }}></i>
+                    </Box>
+                  </Box>
+                  
+                  <Stack gap="sm">
+                    <Title order={3} size="h4" c="white">
+                      {item.title}
+                    </Title>
+                    <Text size="sm" c="dimmed">
+                      {item.description}
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Card>
+            </Grid.Col>
           ))}
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </section>
   )
 }

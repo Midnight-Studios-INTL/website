@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { Card, CardBody, CardHeader, Accordion, AccordionItem } from '@heroui/react'
+import { Card, Text, Title, Container, Grid, Stack, Group, Badge, Accordion, ThemeIcon, Box } from '@mantine/core'
 
 export default function Services() {
   const servicesRef = useRef<HTMLDivElement>(null)
@@ -56,189 +56,245 @@ export default function Services() {
 
   return (
     <section id="services" className="services">
-      <div className="container">
-        <div className="section-header">
-          <h2>Our Services</h2>
-          <p>Custom development solutions for iOS, Android, FiveM, and beyond</p>
-        </div>
-        <div className="services-grid" ref={servicesRef}>
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              className="service-card" 
-              isHoverable
-              isPressable
-            >
-              <CardHeader className="flex flex-col items-center pb-2">
-                <div className="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
-                  <i className={`${service.icon} text-2xl`}></i>
-                </div>
-              </CardHeader>
-              <CardBody className="text-center pt-0">
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-default-500 text-sm leading-relaxed">{service.description}</p>
-              </CardBody>
-            </Card>
-          ))}
-        </div>
+      <Container size="xl" py={100}>
+        <Stack align="center" gap="xl" mb={60}>
+          <Title order={2} size="h1" ta="center" c="white">
+            Our Services
+          </Title>
+          <Text size="lg" c="dimmed" ta="center" maw={600}>
+            Custom development solutions for iOS, Android, FiveM, and beyond
+          </Text>
+        </Stack>
 
-        {/* HeroUI Accordion for Detailed Services */}
-        <div className="services-accordion mt-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Detailed Service Information</h3>
+        <Grid ref={servicesRef}>
+          {services.map((service, index) => (
+            <Grid.Col key={index} span={{ base: 12, sm: 6, md: 4 }}>
+              <Card
+                shadow="sm"
+                padding="xl"
+                radius="md"
+                withBorder
+                style={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  borderColor: 'rgba(255, 255, 255, 0.1)',
+                  backdropFilter: 'blur(10px)',
+                  height: '100%',
+                  transition: 'all 0.3s ease',
+                }}
+                className="service-card"
+              >
+                <Stack align="center" gap="md">
+                  <ThemeIcon
+                    size={80}
+                    radius="xl"
+                    variant="gradient"
+                    gradient={{ from: 'red', to: 'pink' }}
+                  >
+                    <i className={`${service.icon} text-2xl`}></i>
+                  </ThemeIcon>
+                  <Title order={3} size="h4" ta="center" c="white">
+                    {service.title}
+                  </Title>
+                  <Text size="sm" c="dimmed" ta="center">
+                    {service.description}
+                  </Text>
+                </Stack>
+              </Card>
+            </Grid.Col>
+          ))}
+        </Grid>
+
+        {/* Mantine Accordion for Detailed Services */}
+        <Stack gap="xl" mt={60}>
+          <Title order={3} size="h2" ta="center" c="white">
+            Detailed Service Information
+          </Title>
+          
           <Accordion 
-            variant="bordered" 
-            selectionMode="multiple"
-            className="max-w-4xl mx-auto"
-            itemClasses={{
-              base: "py-0 w-full",
-              title: "font-normal text-medium",
-              trigger: "px-2 py-0 data-[hover=true]:bg-default-100 rounded-lg h-14 flex items-center",
-              indicator: "text-medium",
-              content: "text-small px-2",
+            variant="separated"
+            radius="md"
+            chevronPosition="right"
+            maw={800}
+            mx="auto"
+            styles={{
+              item: {
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+              },
+              control: {
+                padding: '1rem',
+                '&:hover': {
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                },
+              },
+              content: {
+                padding: '0 1rem 1rem 1rem',
+              },
             }}
           >
-            <AccordionItem 
-              key="ios" 
-              aria-label="iOS App Development"
-              title="iOS App Development"
-              subtitle="Native iOS applications with SwiftUI"
-              startContent={<i className="fab fa-apple text-2xl text-primary"></i>}
-            >
-              <div className="space-y-4">
-                <p className="text-default-600">
-                  We create stunning native iOS applications using the latest SwiftUI framework and Swift programming language. 
-                  Our apps are optimized for performance, accessibility, and user experience.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Accordion.Item value="ios">
+              <Accordion.Control>
+                <Group gap="md">
+                  <ThemeIcon size="lg" radius="xl" variant="gradient" gradient={{ from: 'red', to: 'pink' }}>
+                    <i className="fab fa-apple"></i>
+                  </ThemeIcon>
                   <div>
-                    <h4 className="font-semibold mb-2">Technologies:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• SwiftUI & UIKit</li>
-                      <li>• Core Data & CloudKit</li>
-                      <li>• Combine & Async/Await</li>
-                      <li>• Core ML & Vision</li>
-                    </ul>
+                    <Text fw={600} c="white">iOS App Development</Text>
+                    <Text size="sm" c="dimmed">Native iOS applications with SwiftUI</Text>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Features:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• App Store optimization</li>
-                      <li>• Push notifications</li>
-                      <li>• In-app purchases</li>
-                      <li>• Offline functionality</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </AccordionItem>
+                </Group>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Stack gap="md">
+                  <Text c="dimmed">
+                    We create stunning native iOS applications using the latest SwiftUI framework and Swift programming language. 
+                    Our apps are optimized for performance, accessibility, and user experience.
+                  </Text>
+                  <Grid>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Technologies:</Text>
+                      <Stack gap="xs">
+                        {['SwiftUI & UIKit', 'Core Data & CloudKit', 'Combine & Async/Await', 'Core ML & Vision'].map((tech) => (
+                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Features:</Text>
+                      <Stack gap="xs">
+                        {['App Store optimization', 'Push notifications', 'In-app purchases', 'Offline functionality'].map((feature) => (
+                          <Text key={feature} size="sm" c="dimmed">• {feature}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                  </Grid>
+                </Stack>
+              </Accordion.Panel>
+            </Accordion.Item>
 
-            <AccordionItem 
-              key="android" 
-              aria-label="Android App Development"
-              title="Android App Development"
-              subtitle="Native Android applications with Kotlin"
-              startContent={<i className="fab fa-android text-2xl text-primary"></i>}
-            >
-              <div className="space-y-4">
-                <p className="text-default-600">
-                  Build powerful Android applications using Kotlin and Jetpack Compose. 
-                  We ensure your app works seamlessly across all Android devices and versions.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Accordion.Item value="android">
+              <Accordion.Control>
+                <Group gap="md">
+                  <ThemeIcon size="lg" radius="xl" variant="gradient" gradient={{ from: 'red', to: 'pink' }}>
+                    <i className="fab fa-android"></i>
+                  </ThemeIcon>
                   <div>
-                    <h4 className="font-semibold mb-2">Technologies:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• Kotlin & Jetpack Compose</li>
-                      <li>• Room Database</li>
-                      <li>• Retrofit & OkHttp</li>
-                      <li>• Firebase Integration</li>
-                    </ul>
+                    <Text fw={600} c="white">Android App Development</Text>
+                    <Text size="sm" c="dimmed">Native Android applications with Kotlin</Text>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Features:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• Material Design 3</li>
-                      <li>• Background services</li>
-                      <li>• Camera & sensors</li>
-                      <li>• Google Play optimization</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </AccordionItem>
+                </Group>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Stack gap="md">
+                  <Text c="dimmed">
+                    Build powerful Android applications using Kotlin and Jetpack Compose. 
+                    We ensure your app works seamlessly across all Android devices and versions.
+                  </Text>
+                  <Grid>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Technologies:</Text>
+                      <Stack gap="xs">
+                        {['Kotlin & Jetpack Compose', 'Room Database', 'Retrofit & OkHttp', 'Firebase Integration'].map((tech) => (
+                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Features:</Text>
+                      <Stack gap="xs">
+                        {['Material Design 3', 'Background services', 'Camera & sensors', 'Google Play optimization'].map((feature) => (
+                          <Text key={feature} size="sm" c="dimmed">• {feature}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                  </Grid>
+                </Stack>
+              </Accordion.Panel>
+            </Accordion.Item>
 
-            <AccordionItem 
-              key="fivem" 
-              aria-label="FiveM Development"
-              title="FiveM Development"
-              subtitle="Custom FiveM servers and scripts"
-              startContent={<i className="fas fa-gamepad text-2xl text-primary"></i>}
-            >
-              <div className="space-y-4">
-                <p className="text-default-600">
-                  Create immersive FiveM roleplay servers with custom scripts, frameworks, and unique gameplay experiences. 
-                  We build everything from basic resources to complex server systems.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Accordion.Item value="fivem">
+              <Accordion.Control>
+                <Group gap="md">
+                  <ThemeIcon size="lg" radius="xl" variant="gradient" gradient={{ from: 'red', to: 'pink' }}>
+                    <i className="fas fa-gamepad"></i>
+                  </ThemeIcon>
                   <div>
-                    <h4 className="font-semibold mb-2">Services:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• Custom resource development</li>
-                      <li>• Server configuration</li>
-                      <li>• Database integration</li>
-                      <li>• Anti-cheat systems</li>
-                    </ul>
+                    <Text fw={600} c="white">FiveM Development</Text>
+                    <Text size="sm" c="dimmed">Custom FiveM servers and scripts</Text>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Frameworks:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• ESX & QBCore</li>
-                      <li>• vRP & Custom</li>
-                      <li>• MySQL & MongoDB</li>
-                      <li>• Discord integration</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </AccordionItem>
+                </Group>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Stack gap="md">
+                  <Text c="dimmed">
+                    Create immersive FiveM roleplay servers with custom scripts, frameworks, and unique gameplay experiences. 
+                    We build everything from basic resources to complex server systems.
+                  </Text>
+                  <Grid>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Services:</Text>
+                      <Stack gap="xs">
+                        {['Custom resource development', 'Server configuration', 'Database integration', 'Anti-cheat systems'].map((service) => (
+                          <Text key={service} size="sm" c="dimmed">• {service}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Frameworks:</Text>
+                      <Stack gap="xs">
+                        {['ESX & QBCore', 'vRP & Custom', 'MySQL & MongoDB', 'Discord integration'].map((framework) => (
+                          <Text key={framework} size="sm" c="dimmed">• {framework}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                  </Grid>
+                </Stack>
+              </Accordion.Panel>
+            </Accordion.Item>
 
-            <AccordionItem 
-              key="web" 
-              aria-label="Custom Web Development"
-              title="Custom Web Development"
-              subtitle="Full-stack web applications"
-              startContent={<i className="fas fa-code text-2xl text-primary"></i>}
-            >
-              <div className="space-y-4">
-                <p className="text-default-600">
-                  Develop modern web applications with React, Next.js, and Node.js. 
-                  We create responsive, fast, and SEO-optimized websites that deliver exceptional user experiences.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Accordion.Item value="web">
+              <Accordion.Control>
+                <Group gap="md">
+                  <ThemeIcon size="lg" radius="xl" variant="gradient" gradient={{ from: 'red', to: 'pink' }}>
+                    <i className="fas fa-code"></i>
+                  </ThemeIcon>
                   <div>
-                    <h4 className="font-semibold mb-2">Frontend:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• React & Next.js</li>
-                      <li>• TypeScript</li>
-                      <li>• Tailwind CSS</li>
-                      <li>• Framer Motion</li>
-                    </ul>
+                    <Text fw={600} c="white">Custom Web Development</Text>
+                    <Text size="sm" c="dimmed">Full-stack web applications</Text>
                   </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">Backend:</h4>
-                    <ul className="text-sm text-default-500 space-y-1">
-                      <li>• Node.js & Express</li>
-                      <li>• PostgreSQL & MongoDB</li>
-                      <li>• REST & GraphQL APIs</li>
-                      <li>• Authentication & Security</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </AccordionItem>
+                </Group>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Stack gap="md">
+                  <Text c="dimmed">
+                    Develop modern web applications with React, Next.js, and Node.js. 
+                    We create responsive, fast, and SEO-optimized websites that deliver exceptional user experiences.
+                  </Text>
+                  <Grid>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Frontend:</Text>
+                      <Stack gap="xs">
+                        {['React & Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'].map((tech) => (
+                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                    <Grid.Col span={6}>
+                      <Text fw={600} mb="sm" c="white">Backend:</Text>
+                      <Stack gap="xs">
+                        {['Node.js & Express', 'PostgreSQL & MongoDB', 'REST & GraphQL APIs', 'Authentication & Security'].map((tech) => (
+                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                        ))}
+                      </Stack>
+                    </Grid.Col>
+                  </Grid>
+                </Stack>
+              </Accordion.Panel>
+            </Accordion.Item>
           </Accordion>
-        </div>
-      </div>
+        </Stack>
+      </Container>
     </section>
   )
 }

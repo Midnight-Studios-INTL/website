@@ -1,12 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from '@heroui/react'
+import { Burger, Group, Button, Container, Stack, Drawer, ScrollArea, Box } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
 import Logo from './Logo'
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [opened, { toggle, close }] = useDisclosure(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,201 +27,132 @@ export default function Navigation() {
         behavior: 'smooth'
       })
     }
-    setIsMenuOpen(false)
+    close()
   }
 
+  const navItems = [
+    { label: 'Home', section: 'hero' },
+    { label: 'Services', section: 'services' },
+    { label: 'About', section: 'about' },
+    { label: 'Who We Are', section: 'who-we-are' },
+    { label: 'Work', section: 'portfolio' },
+    { label: 'Contact', section: 'contact' },
+  ]
+
   return (
-    <Navbar 
-      onMenuOpenChange={setIsMenuOpen}
-      maxWidth="xl"
-      isBlurred
+    <Box
+      component="header"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        backgroundColor: scrolled ? 'rgba(0, 0, 0, 0.9)' : 'rgba(0, 0, 0, 0.8)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        transition: 'all 0.3s ease',
+        height: '70px',
+      }}
     >
-      <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
-        />
-        <NavbarBrand>
+      <Container size="xl" h="100%">
+        <Group justify="space-between" h="100%">
+          {/* Logo */}
           <Logo size="medium" showTagline={false} />
-        </NavbarBrand>
-      </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-1" justify="center">
-        <NavbarItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="px-4 py-2 min-w-unit-16"
-            onClick={() => scrollToSection('hero')}
-          >
-            Home
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="px-4 py-2 min-w-unit-16"
-            onClick={() => scrollToSection('services')}
-          >
-            Services
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="px-4 py-2 min-w-unit-16"
-            onClick={() => scrollToSection('about')}
-          >
-            About
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="px-4 py-2 min-w-unit-16"
-            onClick={() => scrollToSection('who-we-are')}
-          >
-            Who We Are
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="px-4 py-2 min-w-unit-16"
-            onClick={() => scrollToSection('portfolio')}
-          >
-            Work
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="px-4 py-2 min-w-unit-16"
-            onClick={() => scrollToSection('contact')}
-          >
-            Contact
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
+          {/* Desktop Navigation */}
+          <Group gap="md" visibleFrom="sm">
+            {navItems.map((item) => (
+              <Button
+                key={item.section}
+                variant="subtle"
+                color="gray"
+                size="sm"
+                radius="xl"
+                onClick={() => scrollToSection(item.section)}
+                style={{
+                  color: 'white',
+                  fontWeight: 500,
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
+            <Button
+              color="red"
+              size="sm"
+              radius="xl"
+              onClick={() => scrollToSection('contact')}
+              style={{
+                fontWeight: 600,
+              }}
+            >
+              Get Started
+            </Button>
+          </Group>
 
-      <NavbarContent justify="end">
-        <NavbarItem>
-          <Button 
-            color="primary" 
-            variant="solid"
+          {/* Mobile Menu Button */}
+          <Burger
+            opened={opened}
+            onClick={toggle}
+            color="white"
             size="sm"
-            radius="full"
-            className="px-6 py-2 font-semibold"
-            onClick={() => scrollToSection('contact')}
-          >
-            Get Started
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
+            hiddenFrom="sm"
+          />
+        </Group>
+      </Container>
 
-      <NavbarMenu>
-        <NavbarMenuItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="w-full justify-start px-4 py-2"
-            onClick={() => scrollToSection('hero')}
-          >
-            Home
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="w-full justify-start px-4 py-2"
-            onClick={() => scrollToSection('services')}
-          >
-            Services
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="w-full justify-start px-4 py-2"
-            onClick={() => scrollToSection('about')}
-          >
-            About
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="w-full justify-start px-4 py-2"
-            onClick={() => scrollToSection('who-we-are')}
-          >
-            Who We Are
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="w-full justify-start px-4 py-2"
-            onClick={() => scrollToSection('portfolio')}
-          >
-            Work
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button 
-            variant="light" 
-            color="default"
-            size="sm"
-            radius="full"
-            className="w-full justify-start px-4 py-2"
-            onClick={() => scrollToSection('contact')}
-          >
-            Contact
-          </Button>
-        </NavbarMenuItem>
-        <NavbarMenuItem>
-          <Button 
-            color="primary" 
-            variant="solid"
-            size="sm"
-            radius="full"
-            className="w-full justify-center px-6 py-2 font-semibold mt-2"
-            onClick={() => scrollToSection('contact')}
-          >
-            Get Started
-          </Button>
-        </NavbarMenuItem>
-      </NavbarMenu>
-    </Navbar>
+      {/* Mobile Drawer */}
+      <Drawer
+        opened={opened}
+        onClose={close}
+        position="right"
+        size="sm"
+        styles={{
+          content: {
+            backgroundColor: 'rgba(0, 0, 0, 0.95)',
+            backdropFilter: 'blur(10px)',
+          },
+          header: {
+            backgroundColor: 'transparent',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+          },
+        }}
+      >
+        <ScrollArea h="100%">
+          <Stack gap="md" p="md">
+            {navItems.map((item) => (
+              <Button
+                key={item.section}
+                variant="subtle"
+                color="gray"
+                size="lg"
+                radius="xl"
+                onClick={() => scrollToSection(item.section)}
+                style={{
+                  color: 'white',
+                  fontWeight: 500,
+                  justifyContent: 'flex-start',
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
+            <Button
+              color="red"
+              size="lg"
+              radius="xl"
+              onClick={() => scrollToSection('contact')}
+              style={{
+                fontWeight: 600,
+                marginTop: '1rem',
+              }}
+            >
+              Get Started
+            </Button>
+          </Stack>
+        </ScrollArea>
+      </Drawer>
+    </Box>
   )
 }

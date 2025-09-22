@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { HeroUIProvider } from '@heroui/react'
+import { MantineProvider } from '@mantine/core'
+import { Notifications } from '@mantine/notifications'
+import '@mantine/core/styles.css'
+import '@mantine/notifications/styles.css'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
         return (
-          <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
+          <html lang="en">
             <head>
               <link
                 rel="stylesheet"
@@ -31,10 +34,20 @@ export default function RootLayout({
                 crossOrigin="anonymous"
               />
             </head>
-            <body className={`${inter.className} dark`}>
-              <HeroUIProvider>
+            <body className={inter.className}>
+              <MantineProvider
+                theme={{
+                  primaryColor: 'red',
+                  colors: {
+                    red: ['#ffe0e0', '#ffb3b3', '#ff8080', '#ff4d4d', '#ff1a1a', '#e60000', '#cc0000', '#b30000', '#990000', '#800000'],
+                  },
+                  fontFamily: 'Inter, sans-serif',
+                }}
+                defaultColorScheme="dark"
+              >
+                <Notifications />
                 {children}
-              </HeroUIProvider>
+              </MantineProvider>
             </body>
           </html>
         )
