@@ -9,7 +9,11 @@ export const metadata: Metadata = {
   description: 'Midnight Studios INTL delivers cutting-edge technology solutions with Christian values at our core. We build innovative digital experiences that honor God while serving our clients with excellence.',
   keywords: 'christian technology, tech solutions, digital ministry, midnight studios, web development, mobile apps, christian values, technology consulting',
   authors: [{ name: 'Midnight Studios INTL' }],
-  viewport: 'width=device-width, initial-scale=1',
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -23,6 +27,7 @@ export default function RootLayout({
         <link 
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          crossOrigin="anonymous"
         />
       </head>
       <body className={inter.className}>{children}</body>
