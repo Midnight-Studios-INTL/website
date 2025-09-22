@@ -1,3 +1,5 @@
+'use client'
+
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { Container, Title, Text, Box, List, Stack } from '@mantine/core'
