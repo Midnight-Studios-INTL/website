@@ -24,17 +24,17 @@ export default function Portfolio() {
   const portfolioItems = [
     {
       icon: 'fab fa-apple',
-      title: 'iOS E-Commerce App',
-      description: 'Native iOS application with SwiftUI, featuring custom UI components, payment integration, and real-time inventory management.',
+      title: 'iOS & Android App Development',
+      description: 'Native iOS and Android applications with custom UI components, payment integration, and real-time features.',
       image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop&crop=center',
-      alt: 'iOS E-Commerce App Interface'
+      alt: 'iOS & Android App Development'
     },
     {
       icon: 'fab fa-android',
-      title: 'Android Fitness Tracker',
-      description: 'Cross-platform fitness application with custom charts, GPS tracking, and social features built with Kotlin and Jetpack Compose.',
+      title: 'App Website Replicator',
+      description: 'Custom web application replication services for iOS and Android platforms with modern design and functionality.',
       image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop&crop=center',
-      alt: 'Android Fitness Tracker App'
+      alt: 'App Website Replicator'
     },
     {
       icon: 'fas fa-gamepad',
