@@ -3,11 +3,14 @@
 import { useState, useEffect } from 'react'
 import { Burger, Group, Button, Container, Stack, Drawer, ScrollArea, Box } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
+import { useRouter, usePathname } from 'next/navigation'
 import Logo from './Logo'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [opened, { toggle, close }] = useDisclosure(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,25 +21,19 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const offsetTop = element.offsetTop - 70
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      })
-    }
+  const navigateToPage = (path: string) => {
+    router.push(path)
     close()
   }
 
   const navItems = [
-    { label: 'Home', section: 'hero' },
-    { label: 'Services', section: 'services' },
-    { label: 'About', section: 'about' },
-    { label: 'Who We Are', section: 'who-we-are' },
-    { label: 'Work', section: 'portfolio' },
-    { label: 'Contact', section: 'contact' },
+    { label: 'Home', path: '/' },
+    { label: 'Services', path: '/services' },
+    { label: 'About', path: '/about' },
+    { label: 'Who We Are', path: '/who-we-are' },
+    { label: 'Work', path: '/portfolio' },
+    { label: 'Contact', path: '/contact' },
+    { label: 'FAQ', path: '/faq' },
   ]
 
   return (
@@ -64,15 +61,16 @@ export default function Navigation() {
           <Group gap="md" visibleFrom="sm">
             {navItems.map((item) => (
               <Button
-                key={item.section}
+                key={item.path}
                 variant="subtle"
                 color="gray"
                 size="sm"
                 radius="xl"
-                onClick={() => scrollToSection(item.section)}
+                onClick={() => navigateToPage(item.path)}
                 style={{
                   color: 'white',
                   fontWeight: 500,
+                  backgroundColor: pathname === item.path ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
                 }}
               >
                 {item.label}
@@ -82,7 +80,7 @@ export default function Navigation() {
               color="red"
               size="sm"
               radius="xl"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => navigateToPage('/contact')}
               style={{
                 fontWeight: 600,
               }}
@@ -123,16 +121,17 @@ export default function Navigation() {
           <Stack gap="md" p="md">
             {navItems.map((item) => (
               <Button
-                key={item.section}
+                key={item.path}
                 variant="subtle"
                 color="gray"
                 size="lg"
                 radius="xl"
-                onClick={() => scrollToSection(item.section)}
+                onClick={() => navigateToPage(item.path)}
                 style={{
                   color: 'white',
                   fontWeight: 500,
                   justifyContent: 'flex-start',
+                  backgroundColor: pathname === item.path ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
                 }}
               >
                 {item.label}
@@ -142,7 +141,7 @@ export default function Navigation() {
               color="red"
               size="lg"
               radius="xl"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => navigateToPage('/contact')}
               style={{
                 fontWeight: 600,
                 marginTop: '1rem',

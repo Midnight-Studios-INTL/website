@@ -1,17 +1,13 @@
 'use client'
 
 import Logo from './Logo'
+import { useRouter } from 'next/navigation'
 
 export default function Footer() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const offsetTop = element.offsetTop - 70
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-      })
-    }
+  const router = useRouter()
+
+  const navigateToPage = (path: string) => {
+    router.push(path)
   }
 
   return (
@@ -39,20 +35,20 @@ export default function Footer() {
           <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
-              <li><a onClick={() => scrollToSection('home')}>Home</a></li>
-              <li><a onClick={() => scrollToSection('about')}>About</a></li>
-              <li><a onClick={() => scrollToSection('services')}>Services</a></li>
-              <li><a onClick={() => scrollToSection('portfolio')}>Portfolio</a></li>
-              <li><a onClick={() => scrollToSection('contact')}>Contact</a></li>
+              <li><a onClick={() => navigateToPage('/')}>Home</a></li>
+              <li><a onClick={() => navigateToPage('/about')}>About</a></li>
+              <li><a onClick={() => navigateToPage('/services')}>Services</a></li>
+              <li><a onClick={() => navigateToPage('/portfolio')}>Portfolio</a></li>
+              <li><a onClick={() => navigateToPage('/contact')}>Contact</a></li>
+              <li><a onClick={() => navigateToPage('/faq')}>FAQ</a></li>
             </ul>
           </div>
           <div className="footer-section">
-            <h4>Services</h4>
+            <h4>Legal</h4>
             <ul>
-              <li><a href="#">iOS App Development</a></li>
-              <li><a href="#">Android App Development</a></li>
-              <li><a href="#">FiveM Development</a></li>
-              <li><a href="#">Custom Code</a></li>
+              <li><a onClick={() => navigateToPage('/privacy-policy')}>Privacy Policy</a></li>
+              <li><a onClick={() => navigateToPage('/disclaimer')}>Disclaimer</a></li>
+              <li><a onClick={() => navigateToPage('/contact-us')}>Contact Us</a></li>
             </ul>
           </div>
           <div className="footer-section">
