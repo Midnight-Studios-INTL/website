@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Logo from './Logo'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,7 +32,7 @@ export default function Navigation() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>Midnight Studios <span className="intl">INTL</span></h2>
+          <Logo size="medium" showTagline={false} />
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
@@ -55,15 +56,15 @@ export default function Navigation() {
               className="nav-link" 
               onClick={() => scrollToSection('services')}
             >
-              Solutions
+              Services
             </a>
           </li>
           <li className="nav-item">
             <a 
               className="nav-link" 
-              onClick={() => scrollToSection('values')}
+              onClick={() => scrollToSection('about')}
             >
-              Values
+              About
             </a>
           </li>
           <li className="nav-item">

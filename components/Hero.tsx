@@ -1,5 +1,7 @@
 'use client'
 
+import Logo from './Logo'
+
 export default function Hero() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -17,16 +19,16 @@ export default function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
-            <i className="fas fa-cross"></i>
-            <span>Christ-Centered Technology</span>
+            <Logo size="small" showTagline={false} />
+            <span>Custom Development Solutions</span>
           </div>
           <h1 className="hero-title">
-            Where <span className="highlight">Faith</span> Meets 
-            <span className="highlight"> Innovation</span>
+            Where <span className="highlight">Code</span> Meets 
+            <span className="highlight"> Creativity</span>
           </h1>
           <p className="hero-subtitle">
-            Midnight Studios INTL delivers cutting-edge technology solutions with Christian values at our core. 
-            We build digital experiences that honor God while serving our clients with excellence.
+            Midnight Studios INTL specializes in custom iOS/Android app development, FiveM server creation, 
+            and bespoke software solutions. We craft digital experiences that push boundaries and exceed expectations.
           </p>
           <div className="hero-buttons">
             <button 
@@ -37,9 +39,9 @@ export default function Hero() {
             </button>
             <button 
               className="btn btn-secondary"
-              onClick={() => scrollToSection('values')}
+              onClick={() => scrollToSection('services')}
             >
-              Our Values
+              Our Services
             </button>
           </div>
         </div>
@@ -59,8 +61,8 @@ export default function Hero() {
                 <i className="fas fa-database"></i>
               </div>
             </div>
-            <div className="cross-symbol">
-              <i className="fas fa-cross"></i>
+            <div className="logo-symbol">
+              <Logo size="large" showTagline={true} />
             </div>
           </div>
         </div>

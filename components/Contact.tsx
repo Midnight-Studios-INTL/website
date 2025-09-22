@@ -50,8 +50,8 @@ export default function Contact() {
     <section id="contact" className="contact">
       <div className="container">
         <div className="section-header">
-          <h2>Let's Partner Together</h2>
-          <p>Ready to use technology to advance God's kingdom? Let's start the conversation with prayer.</p>
+          <h2>Let's Build Something Amazing</h2>
+          <p>Ready to bring your app or FiveM server idea to life? Let's discuss your project and create something extraordinary together.</p>
         </div>
         <div className="contact-content">
           <div className="contact-info">
@@ -60,8 +60,8 @@ export default function Contact() {
                 <i className="fas fa-map-marker-alt"></i>
               </div>
               <div className="contact-details">
-                <h3>Global Ministry</h3>
-                <p>Serving worldwide<br />Christ-centered technology solutions</p>
+                <h3>Global Development</h3>
+                <p>Serving worldwide<br />Custom app and FiveM development</p>
               </div>
             </div>
             <div className="contact-item">
@@ -69,8 +69,8 @@ export default function Contact() {
                 <i className="fas fa-phone"></i>
               </div>
               <div className="contact-details">
-                <h3>Prayer Line</h3>
-                <p>+1 (555) PRAY-123</p>
+                <h3>Development Line</h3>
+                <p>+1 (555) CODE-123</p>
               </div>
             </div>
             <div className="contact-item">

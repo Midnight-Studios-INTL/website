@@ -22,34 +22,34 @@ export default function Services() {
 
   const services = [
     {
+      icon: 'fab fa-apple',
+      title: 'iOS App Development',
+      description: 'Custom iOS applications built with Swift and SwiftUI. Native performance with modern design patterns and user experience.'
+    },
+    {
+      icon: 'fab fa-android',
+      title: 'Android App Development',
+      description: 'Native Android apps using Kotlin and Jetpack Compose. Optimized for performance across all Android devices.'
+    },
+    {
+      icon: 'fas fa-gamepad',
+      title: 'FiveM Development',
+      description: 'Custom FiveM servers, scripts, and resources. Server management, custom frameworks, and unique gameplay experiences.'
+    },
+    {
       icon: 'fas fa-code',
-      title: 'Web Development',
-      description: 'Custom websites and web applications built with modern technologies, optimized for ministry and business growth.'
-    },
-    {
-      icon: 'fas fa-mobile-alt',
-      title: 'Mobile Applications',
-      description: 'Native and cross-platform mobile apps that connect your community and amplify your message.'
-    },
-    {
-      icon: 'fas fa-cloud',
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and services that grow with your ministry or business needs.'
+      title: 'Custom Code Development',
+      description: 'Bespoke software solutions tailored to your specific needs. From web applications to desktop software and APIs.'
     },
     {
       icon: 'fas fa-database',
-      title: 'Data Management',
-      description: 'Secure, efficient data systems that help you make informed decisions and serve your community better.'
+      title: 'Database Design & Management',
+      description: 'Custom database architecture, optimization, and management. MySQL, PostgreSQL, MongoDB, and more.'
     },
     {
-      icon: 'fas fa-shield-alt',
-      title: 'Cybersecurity',
-      description: 'Comprehensive security solutions to protect your digital assets and maintain trust with your community.'
-    },
-    {
-      icon: 'fas fa-praying-hands',
-      title: 'Ministry Tech',
-      description: 'Specialized technology solutions for churches, ministries, and Christian organizations.'
+      icon: 'fas fa-paint-brush',
+      title: 'UI/UX Design',
+      description: 'Beautiful, intuitive user interfaces and user experiences. From wireframes to pixel-perfect implementations.'
     }
   ]
 
@@ -57,8 +57,8 @@ export default function Services() {
     <section id="services" className="services">
       <div className="container">
         <div className="section-header">
-          <h2>Our Solutions</h2>
-          <p>Technology solutions that serve God's purposes and advance your mission</p>
+          <h2>Our Services</h2>
+          <p>Custom development solutions for iOS, Android, FiveM, and beyond</p>
         </div>
         <div className="services-grid" ref={servicesRef}>
           {services.map((service, index) => (

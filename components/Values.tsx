@@ -22,28 +22,28 @@ export default function Values() {
 
   const values = [
     {
-      icon: 'fas fa-cross',
-      title: 'Christ-Centered',
-      description: 'Every project begins and ends with prayer. We seek God\'s guidance in all our work and strive to honor Him in everything we do.',
-      verse: '"Whatever you do, work at it with all your heart, as working for the Lord." - Colossians 3:23'
+      icon: 'fas fa-code',
+      title: 'Custom Development',
+      description: 'We write every line of code from scratch, ensuring your project is unique, optimized, and tailored to your specific needs.',
+      verse: '"Excellence is not a skill, it\'s an attitude." - Ralph Marston'
     },
     {
       icon: 'fas fa-handshake',
-      title: 'Integrity',
-      description: 'We conduct business with complete honesty and transparency, building lasting relationships based on trust and mutual respect.',
-      verse: '"The integrity of the upright guides them." - Proverbs 11:3'
+      title: 'Client Partnership',
+      description: 'We work closely with our clients throughout the entire development process, ensuring transparency and collaboration at every step.',
+      verse: '"The best way to find out if you can trust somebody is to trust them." - Ernest Hemingway'
     },
     {
       icon: 'fas fa-lightbulb',
       title: 'Innovation',
-      description: 'We embrace cutting-edge technology while maintaining our Christian values, always seeking better ways to serve our clients.',
-      verse: '"I can do all things through Christ who strengthens me." - Philippians 4:13'
+      description: 'We stay ahead of the curve with the latest technologies and development practices, always pushing the boundaries of what\'s possible.',
+      verse: '"Innovation distinguishes between a leader and a follower." - Steve Jobs'
     },
     {
-      icon: 'fas fa-heart',
-      title: 'Service',
-      description: 'We serve our clients with excellence, treating every project as an opportunity to make a positive impact for God\'s kingdom.',
-      verse: '"Serve wholeheartedly, as if you were serving the Lord." - Ephesians 6:7'
+      icon: 'fas fa-cogs',
+      title: 'Quality & Performance',
+      description: 'Every project is built with performance and scalability in mind, ensuring your solution grows with your business needs.',
+      verse: '"Quality is not an act, it is a habit." - Aristotle'
     }
   ]
 
@@ -52,7 +52,7 @@ export default function Values() {
       <div className="container">
         <div className="section-header">
           <h2>Our Core Values</h2>
-          <p>The principles that guide everything we do at Midnight Studios INTL</p>
+          <p>The principles that drive our development process and client relationships</p>
         </div>
         <div className="values-grid" ref={valuesRef}>
           {values.map((value, index) => (

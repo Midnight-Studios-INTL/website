@@ -784,7 +784,7 @@ body {
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   background: rgba(233, 69, 96, 0.1);
   border: 1px solid rgba(233, 69, 96, 0.3);
   padding: 0.5rem 1rem;
@@ -835,14 +835,12 @@ body {
   color: var(--text-light);
 }
 
-.cross-symbol {
+.logo-symbol {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem;
-  color: var(--gold-color);
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .faith-tech-symbol {
@@ -854,10 +852,9 @@ body {
   align-items: center;
 }
 
-.faith-tech-symbol i {
-  font-size: 4rem;
-  color: var(--gold-color);
+.faith-tech-symbol .logo-container {
   z-index: 2;
+  position: relative;
 }
 
 .circuit-pattern {
@@ -1040,6 +1037,10 @@ body {
   color: var(--text-light);
 }
 
+.footer-section .logo-container {
+  margin-bottom: 1rem;
+}
+
 .footer-section p {
   color: var(--text-muted);
 }
@@ -1102,4 +1103,108 @@ body {
   color: var(--gold-color);
   font-size: 0.8em;
   font-weight: 300;
+}
+
+/* Logo Styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circuit-m {
+  animation: circuitGlow 3s ease-in-out infinite alternate;
+}
+
+.circuit-trace {
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.moon-star {
+  animation: moonGlow 2s ease-in-out infinite alternate;
+}
+
+.moon {
+  filter: drop-shadow(0 0 3px #fff);
+}
+
+.star {
+  filter: drop-shadow(0 0 2px #fff);
+  animation: starTwinkle 1.5s ease-in-out infinite alternate;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-name {
+  display: flex;
+  gap: 0.25rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.midnight-text {
+  color: #8B5CF6;
+  text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+}
+
+.studio-text {
+  color: #06B6D4;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.5);
+}
+
+.intl-text {
+  color: var(--text-light);
+  font-size: 0.7em;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin-top: 0.125rem;
+}
+
+.tagline-text {
+  color: var(--text-muted);
+  font-size: 0.5em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-top: 0.125rem;
+  opacity: 0.8;
+}
+
+@keyframes circuitGlow {
+  0% {
+    filter: drop-shadow(0 0 4px currentColor) brightness(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 8px currentColor) brightness(1.2);
+  }
+}
+
+@keyframes moonGlow {
+  0% {
+    filter: drop-shadow(0 0 3px #fff) brightness(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 6px #fff) brightness(1.3);
+  }
+}
+
+@keyframes starTwinkle {
+  0% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }

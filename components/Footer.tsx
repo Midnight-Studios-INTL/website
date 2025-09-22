@@ -1,5 +1,7 @@
 'use client'
 
+import Logo from './Logo'
+
 export default function Footer() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -17,8 +19,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Midnight Studios <span className="intl">INTL</span></h3>
-            <p>Where faith meets innovation. Creating technology solutions that honor God and serve His people.</p>
+            <Logo size="medium" showTagline={true} />
+            <p>Where code meets creativity. Building custom iOS/Android apps, FiveM servers, and bespoke software solutions.</p>
             <div className="social-links">
               <a href="#" aria-label="Facebook">
                 <i className="fab fa-facebook"></i>
@@ -45,23 +47,23 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-section">
-            <h4>Solutions</h4>
+            <h4>Services</h4>
             <ul>
-              <li><a href="#">Web Development</a></li>
-              <li><a href="#">Mobile Applications</a></li>
-              <li><a href="#">Cloud Solutions</a></li>
-              <li><a href="#">Ministry Tech</a></li>
+              <li><a href="#">iOS App Development</a></li>
+              <li><a href="#">Android App Development</a></li>
+              <li><a href="#">FiveM Development</a></li>
+              <li><a href="#">Custom Code</a></li>
             </ul>
           </div>
           <div className="footer-section">
             <h4>Contact Info</h4>
-            <p><i className="fas fa-phone"></i> +1 (555) PRAY-123</p>
+            <p><i className="fas fa-phone"></i> +1 (555) CODE-123</p>
             <p><i className="fas fa-envelope"></i> hello@midnightstudiosintl.com</p>
-            <p><i className="fas fa-globe"></i> Serving Worldwide</p>
+            <p><i className="fas fa-globe"></i> Global Development</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Midnight Studios INTL. All rights reserved. | "For from him and through him and for him are all things. To him be the glory forever!" - Romans 11:36</p>
+          <p>&copy; 2024 Midnight Studios INTL. All rights reserved. | Custom development solutions for iOS, Android, FiveM, and beyond.</p>
         </div>
       </div>
     </footer>

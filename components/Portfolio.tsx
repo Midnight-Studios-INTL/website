@@ -22,34 +22,34 @@ export default function Portfolio() {
 
   const portfolioItems = [
     {
-      icon: 'fas fa-church',
-      title: 'Church Management System',
-      description: 'Comprehensive platform for member management, event planning, and online giving for growing congregations.'
+      icon: 'fab fa-apple',
+      title: 'iOS E-Commerce App',
+      description: 'Native iOS application with SwiftUI, featuring custom UI components, payment integration, and real-time inventory management.'
+    },
+    {
+      icon: 'fab fa-android',
+      title: 'Android Fitness Tracker',
+      description: 'Cross-platform fitness application with custom charts, GPS tracking, and social features built with Kotlin and Jetpack Compose.'
+    },
+    {
+      icon: 'fas fa-gamepad',
+      title: 'FiveM Roleplay Server',
+      description: 'Custom FiveM server with unique scripts, custom frameworks, and immersive roleplay experiences for 200+ concurrent players.'
+    },
+    {
+      icon: 'fas fa-code',
+      title: 'Custom Web Application',
+      description: 'Full-stack web application with React frontend, Node.js backend, and custom database architecture for business automation.'
+    },
+    {
+      icon: 'fas fa-database',
+      title: 'Database Migration System',
+      description: 'Custom database migration tool with data validation, transformation, and automated backup systems for enterprise clients.'
     },
     {
       icon: 'fas fa-mobile-alt',
-      title: 'Ministry Mobile App',
-      description: 'Cross-platform mobile application connecting church members with sermons, events, and community resources.'
-    },
-    {
-      icon: 'fas fa-graduation-cap',
-      title: 'Christian Education Platform',
-      description: 'Online learning management system designed specifically for Christian schools and Bible study programs.'
-    },
-    {
-      icon: 'fas fa-hands-praying',
-      title: 'Prayer Request System',
-      description: 'Secure platform for managing prayer requests and connecting prayer warriors within the community.'
-    },
-    {
-      icon: 'fas fa-donate',
-      title: 'Online Giving Platform',
-      description: 'Secure, user-friendly donation system with recurring giving options and detailed reporting for ministries.'
-    },
-    {
-      icon: 'fas fa-bible',
-      title: 'Digital Bible Study Tool',
-      description: 'Interactive Bible study platform with note-taking, group discussions, and progress tracking features.'
+      title: 'Cross-Platform App',
+      description: 'React Native application with native modules, custom animations, and platform-specific optimizations for iOS and Android.'
     }
   ]
 
@@ -58,7 +58,7 @@ export default function Portfolio() {
       <div className="container">
         <div className="section-header">
           <h2>Our Work</h2>
-          <p>Technology solutions that advance God's kingdom and serve His people</p>
+          <p>Custom development projects showcasing our expertise in mobile apps, FiveM, and full-stack solutions</p>
         </div>
         <div className="portfolio-grid" ref={portfolioRef}>
           {portfolioItems.map((item, index) => (
