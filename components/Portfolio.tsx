@@ -22,19 +22,34 @@ export default function Portfolio() {
 
   const portfolioItems = [
     {
-      icon: 'fas fa-laptop',
-      title: 'E-commerce Platform',
-      description: 'Modern online store with advanced features and seamless user experience.'
+      icon: 'fas fa-church',
+      title: 'Church Management System',
+      description: 'Comprehensive platform for member management, event planning, and online giving for growing congregations.'
     },
     {
       icon: 'fas fa-mobile-alt',
-      title: 'Mobile Banking App',
-      description: 'Secure and intuitive mobile application for financial services.'
+      title: 'Ministry Mobile App',
+      description: 'Cross-platform mobile application connecting church members with sermons, events, and community resources.'
     },
     {
-      icon: 'fas fa-globe',
-      title: 'Corporate Website',
-      description: 'Professional website with modern design and excellent performance.'
+      icon: 'fas fa-graduation-cap',
+      title: 'Christian Education Platform',
+      description: 'Online learning management system designed specifically for Christian schools and Bible study programs.'
+    },
+    {
+      icon: 'fas fa-hands-praying',
+      title: 'Prayer Request System',
+      description: 'Secure platform for managing prayer requests and connecting prayer warriors within the community.'
+    },
+    {
+      icon: 'fas fa-donate',
+      title: 'Online Giving Platform',
+      description: 'Secure, user-friendly donation system with recurring giving options and detailed reporting for ministries.'
+    },
+    {
+      icon: 'fas fa-bible',
+      title: 'Digital Bible Study Tool',
+      description: 'Interactive Bible study platform with note-taking, group discussions, and progress tracking features.'
     }
   ]
 
@@ -43,7 +58,7 @@ export default function Portfolio() {
       <div className="container">
         <div className="section-header">
           <h2>Our Work</h2>
-          <p>Showcasing some of our recent projects and achievements</p>
+          <p>Technology solutions that advance God's kingdom and serve His people</p>
         </div>
         <div className="portfolio-grid" ref={portfolioRef}>
           {portfolioItems.map((item, index) => (

@@ -24,32 +24,32 @@ export default function Services() {
     {
       icon: 'fas fa-code',
       title: 'Web Development',
-      description: 'Custom websites and web applications built with modern technologies and best practices.'
-    },
-    {
-      icon: 'fas fa-paint-brush',
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive designs that provide exceptional user experiences across all devices.'
+      description: 'Custom websites and web applications built with modern technologies, optimized for ministry and business growth.'
     },
     {
       icon: 'fas fa-mobile-alt',
-      title: 'Mobile Apps',
-      description: 'Native and cross-platform mobile applications that engage users and drive business growth.'
+      title: 'Mobile Applications',
+      description: 'Native and cross-platform mobile apps that connect your community and amplify your message.'
     },
     {
-      icon: 'fas fa-search',
-      title: 'SEO Optimization',
-      description: 'Improve your search engine rankings and drive more organic traffic to your website.'
+      icon: 'fas fa-cloud',
+      title: 'Cloud Solutions',
+      description: 'Scalable cloud infrastructure and services that grow with your ministry or business needs.'
     },
     {
-      icon: 'fas fa-chart-line',
-      title: 'Analytics',
-      description: 'Data-driven insights to help you understand your users and optimize your digital presence.'
+      icon: 'fas fa-database',
+      title: 'Data Management',
+      description: 'Secure, efficient data systems that help you make informed decisions and serve your community better.'
     },
     {
-      icon: 'fas fa-headset',
-      title: 'Support',
-      description: 'Ongoing maintenance and support to keep your digital solutions running smoothly.'
+      icon: 'fas fa-shield-alt',
+      title: 'Cybersecurity',
+      description: 'Comprehensive security solutions to protect your digital assets and maintain trust with your community.'
+    },
+    {
+      icon: 'fas fa-praying-hands',
+      title: 'Ministry Tech',
+      description: 'Specialized technology solutions for churches, ministries, and Christian organizations.'
     }
   ]
 
@@ -57,8 +57,8 @@ export default function Services() {
     <section id="services" className="services">
       <div className="container">
         <div className="section-header">
-          <h2>Our Services</h2>
-          <p>Comprehensive solutions for all your digital needs</p>
+          <h2>Our Solutions</h2>
+          <p>Technology solutions that serve God's purposes and advance your mission</p>
         </div>
         <div className="services-grid" ref={servicesRef}>
           {services.map((service, index) => (

@@ -50,8 +50,8 @@ export default function Contact() {
     <section id="contact" className="contact">
       <div className="container">
         <div className="section-header">
-          <h2>Get In Touch</h2>
-          <p>Ready to start your next project? Let's talk!</p>
+          <h2>Let's Partner Together</h2>
+          <p>Ready to use technology to advance God's kingdom? Let's start the conversation with prayer.</p>
         </div>
         <div className="contact-content">
           <div className="contact-info">
@@ -60,8 +60,8 @@ export default function Contact() {
                 <i className="fas fa-map-marker-alt"></i>
               </div>
               <div className="contact-details">
-                <h3>Address</h3>
-                <p>123 Business Street<br />City, State 12345</p>
+                <h3>Global Ministry</h3>
+                <p>Serving worldwide<br />Christ-centered technology solutions</p>
               </div>
             </div>
             <div className="contact-item">
@@ -69,8 +69,8 @@ export default function Contact() {
                 <i className="fas fa-phone"></i>
               </div>
               <div className="contact-details">
-                <h3>Phone</h3>
-                <p>+1 (555) 123-4567</p>
+                <h3>Prayer Line</h3>
+                <p>+1 (555) PRAY-123</p>
               </div>
             </div>
             <div className="contact-item">
@@ -79,7 +79,7 @@ export default function Contact() {
               </div>
               <div className="contact-details">
                 <h3>Email</h3>
-                <p>hello@modernsite.com</p>
+                <p>hello@midnightstudiosintl.com</p>
               </div>
             </div>
           </div>

@@ -5,10 +5,10 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Modern Website - Your Digital Presence',
-  description: 'A modern, responsive website built with Next.js. We create stunning digital experiences that drive results and captivate your audience.',
-  keywords: 'website, digital, modern, responsive, nextjs, vercel',
-  authors: [{ name: 'Your Name' }],
+  title: 'Midnight Studios INTL - Christ-Centered Tech Solutions',
+  description: 'Midnight Studios INTL delivers cutting-edge technology solutions with Christian values at our core. We build innovative digital experiences that honor God while serving our clients with excellence.',
+  keywords: 'christian technology, tech solutions, digital ministry, midnight studios, web development, mobile apps, christian values, technology consulting',
+  authors: [{ name: 'Midnight Studios INTL' }],
   viewport: 'width=device-width, initial-scale=1',
 }
 

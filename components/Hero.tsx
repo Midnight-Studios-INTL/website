@@ -16,28 +16,52 @@ export default function Hero() {
     <section id="home" className="hero">
       <div className="hero-container">
         <div className="hero-content">
-          <h1 className="hero-title">Welcome to the Future</h1>
+          <div className="hero-badge">
+            <i className="fas fa-cross"></i>
+            <span>Christ-Centered Technology</span>
+          </div>
+          <h1 className="hero-title">
+            Where <span className="highlight">Faith</span> Meets 
+            <span className="highlight"> Innovation</span>
+          </h1>
           <p className="hero-subtitle">
-            We create stunning digital experiences that drive results and captivate your audience.
+            Midnight Studios INTL delivers cutting-edge technology solutions with Christian values at our core. 
+            We build digital experiences that honor God while serving our clients with excellence.
           </p>
           <div className="hero-buttons">
             <button 
               className="btn btn-primary"
               onClick={() => scrollToSection('contact')}
             >
-              Get Started
+              Start Your Project
             </button>
             <button 
               className="btn btn-secondary"
-              onClick={() => scrollToSection('about')}
+              onClick={() => scrollToSection('values')}
             >
-              Learn More
+              Our Values
             </button>
           </div>
         </div>
         <div className="hero-image">
           <div className="hero-graphic">
-            <i className="fas fa-rocket"></i>
+            <div className="tech-grid">
+              <div className="tech-item">
+                <i className="fas fa-code"></i>
+              </div>
+              <div className="tech-item">
+                <i className="fas fa-mobile-alt"></i>
+              </div>
+              <div className="tech-item">
+                <i className="fas fa-cloud"></i>
+              </div>
+              <div className="tech-item">
+                <i className="fas fa-database"></i>
+              </div>
+            </div>
+            <div className="cross-symbol">
+              <i className="fas fa-cross"></i>
+            </div>
           </div>
         </div>
       </div>

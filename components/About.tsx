@@ -47,35 +47,44 @@ export default function About() {
     <section id="about" className="about">
       <div className="container">
         <div className="section-header">
-          <h2>About Us</h2>
-          <p>We're passionate about creating digital solutions that make a difference</p>
+          <h2>About Midnight Studios INTL</h2>
+          <p>Where technology meets faith, and innovation serves a higher purpose</p>
         </div>
         <div className="about-content">
           <div className="about-text">
-            <h3>Innovation Meets Excellence</h3>
+            <h3>Faith-Driven Innovation</h3>
             <p>
-              With over 5 years of experience in digital design and development, we've helped 
-              hundreds of businesses transform their online presence. Our team combines creativity 
-              with technical expertise to deliver solutions that not only look great but perform exceptionally.
+              At Midnight Studios INTL, we believe that technology should serve God's purposes. 
+              Our team of Christian developers and designers combines cutting-edge technical expertise 
+              with unwavering faith to deliver solutions that not only meet your business needs but 
+              also honor our Creator. We've helped ministries, Christian businesses, and organizations 
+              worldwide leverage technology for Kingdom impact.
             </p>
             <div className="stats" ref={statsRef}>
               <div className="stat">
-                <h4>150+</h4>
-                <p>Projects Completed</p>
+                <h4>200+</h4>
+                <p>Ministry Projects</p>
               </div>
               <div className="stat">
-                <h4>98%</h4>
-                <p>Client Satisfaction</p>
+                <h4>100%</h4>
+                <p>Christ-Centered</p>
               </div>
               <div className="stat">
                 <h4>24/7</h4>
-                <p>Support Available</p>
+                <p>Prayer & Support</p>
               </div>
             </div>
           </div>
           <div className="about-image">
             <div className="image-placeholder">
-              <i className="fas fa-users"></i>
+              <div className="faith-tech-symbol">
+                <i className="fas fa-cross"></i>
+                <div className="circuit-pattern">
+                  <div className="circuit-line"></div>
+                  <div className="circuit-line"></div>
+                  <div className="circuit-line"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

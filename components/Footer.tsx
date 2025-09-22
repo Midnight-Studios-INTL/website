@@ -17,8 +17,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>ModernSite</h3>
-            <p>Creating digital experiences that inspire and engage.</p>
+            <h3>Midnight Studios <span className="intl">INTL</span></h3>
+            <p>Where faith meets innovation. Creating technology solutions that honor God and serve His people.</p>
             <div className="social-links">
               <a href="#" aria-label="Facebook">
                 <i className="fab fa-facebook"></i>
@@ -45,23 +45,23 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-section">
-            <h4>Services</h4>
+            <h4>Solutions</h4>
             <ul>
               <li><a href="#">Web Development</a></li>
-              <li><a href="#">UI/UX Design</a></li>
-              <li><a href="#">Mobile Apps</a></li>
-              <li><a href="#">SEO Optimization</a></li>
+              <li><a href="#">Mobile Applications</a></li>
+              <li><a href="#">Cloud Solutions</a></li>
+              <li><a href="#">Ministry Tech</a></li>
             </ul>
           </div>
           <div className="footer-section">
             <h4>Contact Info</h4>
-            <p><i className="fas fa-phone"></i> +1 (555) 123-4567</p>
-            <p><i className="fas fa-envelope"></i> hello@modernsite.com</p>
-            <p><i className="fas fa-map-marker-alt"></i> 123 Business Street</p>
+            <p><i className="fas fa-phone"></i> +1 (555) PRAY-123</p>
+            <p><i className="fas fa-envelope"></i> hello@midnightstudiosintl.com</p>
+            <p><i className="fas fa-globe"></i> Serving Worldwide</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 ModernSite. All rights reserved.</p>
+          <p>&copy; 2024 Midnight Studios INTL. All rights reserved. | "For from him and through him and for him are all things. To him be the glory forever!" - Romans 11:36</p>
         </div>
       </div>
     </footer>

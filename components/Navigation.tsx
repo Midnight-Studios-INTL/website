@@ -31,7 +31,7 @@ export default function Navigation() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo">
-          <h2>ModernSite</h2>
+          <h2>Midnight Studios <span className="intl">INTL</span></h2>
         </div>
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
@@ -55,7 +55,15 @@ export default function Navigation() {
               className="nav-link" 
               onClick={() => scrollToSection('services')}
             >
-              Services
+              Solutions
+            </a>
+          </li>
+          <li className="nav-item">
+            <a 
+              className="nav-link" 
+              onClick={() => scrollToSection('values')}
+            >
+              Values
             </a>
           </li>
           <li className="nav-item">
@@ -63,7 +71,7 @@ export default function Navigation() {
               className="nav-link" 
               onClick={() => scrollToSection('portfolio')}
             >
-              Portfolio
+              Work
             </a>
           </li>
           <li className="nav-item">
