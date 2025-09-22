@@ -1382,8 +1382,13 @@ body {
   font-size: 1.25rem;
 }
 
-/* HeroUI Native Theme - Minimal Customizations */
-/* Keep your custom sections but let HeroUI handle component styling */
+/* HeroUI Native Theme - Proper Dark Theme Styling */
+
+/* Ensure proper dark theme background */
+body {
+  background: #0a0a0a !important;
+  color: #ffffff !important;
+}
 
 /* Custom section backgrounds to work with HeroUI theme */
 .hero {
@@ -1414,9 +1419,40 @@ body {
   background: #1a1a1a;
 }
 
-/* Keep your custom logo and animations */
-.logo-container {
-  /* Your existing logo styles remain */
+/* Fix HeroUI button styling for dark theme */
+.btn {
+  background: #e94560 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.btn:hover {
+  background: #d63384 !important;
+  color: white !important;
+}
+
+/* Bordered button styling */
+.btn[data-variant="bordered"] {
+  background: transparent !important;
+  color: #e94560 !important;
+  border: 1px solid #e94560 !important;
+}
+
+.btn[data-variant="bordered"]:hover {
+  background: #e94560 !important;
+  color: white !important;
+}
+
+/* Light variant buttons (navigation) */
+.btn[data-variant="light"] {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.btn[data-variant="light"]:hover {
+  background: rgba(233, 69, 96, 0.1) !important;
+  color: #e94560 !important;
 }
 
 /* Service icons with your brand colors */
@@ -1431,4 +1467,13 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Ensure text is white in dark theme */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+p {
+  color: #a1a1aa !important;
 }
