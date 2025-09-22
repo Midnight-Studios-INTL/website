@@ -63,15 +63,20 @@ export default function Services() {
         </div>
         <div className="services-grid" ref={servicesRef}>
           {services.map((service, index) => (
-            <Card key={index} className="service-card" isHoverable>
-              <CardHeader className="flex flex-col items-center">
-                <div className="service-icon">
-                  <i className={service.icon}></i>
+            <Card 
+              key={index} 
+              className="service-card bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105" 
+              isHoverable
+              isPressable
+            >
+              <CardHeader className="flex flex-col items-center pb-2">
+                <div className="service-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
+                  <i className={`${service.icon} text-2xl`}></i>
                 </div>
               </CardHeader>
-              <CardBody className="text-center">
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-default-500">{service.description}</p>
+              <CardBody className="text-center pt-0">
+                <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
+                <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
               </CardBody>
             </Card>
           ))}

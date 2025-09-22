@@ -34,7 +34,7 @@ export default function Navigation() {
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
       isBlurred
-      className="bg-background/80 backdrop-blur-md"
+      className="bg-black/80 backdrop-blur-xl border-b border-white/10"
     >
       <NavbarContent>
         <NavbarMenuToggle
