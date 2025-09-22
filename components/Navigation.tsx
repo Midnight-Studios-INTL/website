@@ -45,12 +45,14 @@ export default function Navigation() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-2" justify="center">
+      <NavbarContent className="hidden sm:flex gap-1" justify="center">
         <NavbarItem>
           <Button 
             variant="light" 
             color="default"
-            size="md"
+            size="sm"
+            radius="full"
+            className="px-4 py-2 min-w-unit-16"
             onClick={() => scrollToSection('hero')}
           >
             Home
@@ -60,7 +62,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
+            size="sm"
+            radius="full"
+            className="px-4 py-2 min-w-unit-16"
             onClick={() => scrollToSection('services')}
           >
             Services
@@ -70,7 +74,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
+            size="sm"
+            radius="full"
+            className="px-4 py-2 min-w-unit-16"
             onClick={() => scrollToSection('about')}
           >
             About
@@ -80,7 +86,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
+            size="sm"
+            radius="full"
+            className="px-4 py-2 min-w-unit-16"
             onClick={() => scrollToSection('who-we-are')}
           >
             Who We Are
@@ -90,7 +98,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
+            size="sm"
+            radius="full"
+            className="px-4 py-2 min-w-unit-16"
             onClick={() => scrollToSection('portfolio')}
           >
             Work
@@ -100,7 +110,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
+            size="sm"
+            radius="full"
+            className="px-4 py-2 min-w-unit-16"
             onClick={() => scrollToSection('contact')}
           >
             Contact
@@ -113,8 +125,9 @@ export default function Navigation() {
           <Button 
             color="primary" 
             variant="solid"
-            size="md"
-            radius="lg"
+            size="sm"
+            radius="full"
+            className="px-6 py-2 font-semibold"
             onClick={() => scrollToSection('contact')}
           >
             Get Started
@@ -127,8 +140,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
-            className="w-full justify-start"
+            size="sm"
+            radius="full"
+            className="w-full justify-start px-4 py-2"
             onClick={() => scrollToSection('hero')}
           >
             Home
@@ -138,8 +152,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
-            className="w-full justify-start"
+            size="sm"
+            radius="full"
+            className="w-full justify-start px-4 py-2"
             onClick={() => scrollToSection('services')}
           >
             Services
@@ -149,8 +164,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
-            className="w-full justify-start"
+            size="sm"
+            radius="full"
+            className="w-full justify-start px-4 py-2"
             onClick={() => scrollToSection('about')}
           >
             About
@@ -160,8 +176,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
-            className="w-full justify-start"
+            size="sm"
+            radius="full"
+            className="w-full justify-start px-4 py-2"
             onClick={() => scrollToSection('who-we-are')}
           >
             Who We Are
@@ -171,8 +188,9 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
-            className="w-full justify-start"
+            size="sm"
+            radius="full"
+            className="w-full justify-start px-4 py-2"
             onClick={() => scrollToSection('portfolio')}
           >
             Work
@@ -182,11 +200,24 @@ export default function Navigation() {
           <Button 
             variant="light" 
             color="default"
-            size="md"
-            className="w-full justify-start"
+            size="sm"
+            radius="full"
+            className="w-full justify-start px-4 py-2"
             onClick={() => scrollToSection('contact')}
           >
             Contact
+          </Button>
+        </NavbarMenuItem>
+        <NavbarMenuItem>
+          <Button 
+            color="primary" 
+            variant="solid"
+            size="sm"
+            radius="full"
+            className="w-full justify-center px-6 py-2 font-semibold mt-2"
+            onClick={() => scrollToSection('contact')}
+          >
+            Get Started
           </Button>
         </NavbarMenuItem>
       </NavbarMenu>
