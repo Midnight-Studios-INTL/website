@@ -1381,3 +1381,54 @@ body {
   margin-right: 0.5rem;
   font-size: 1.25rem;
 }
+
+/* HeroUI Native Theme - Minimal Customizations */
+/* Keep your custom sections but let HeroUI handle component styling */
+
+/* Custom section backgrounds to work with HeroUI theme */
+.hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.about {
+  background: #0a0a0a;
+}
+
+.services {
+  background: #1a1a1a;
+}
+
+.who-we-are {
+  background: #0a0a0a;
+}
+
+.values {
+  background: #1a1a1a;
+}
+
+.portfolio {
+  background: #0a0a0a;
+}
+
+.contact {
+  background: #1a1a1a;
+}
+
+/* Keep your custom logo and animations */
+.logo-container {
+  /* Your existing logo styles remain */
+}
+
+/* Service icons with your brand colors */
+.service-icon {
+  background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%) !important;
+  color: white !important;
+}
+
+/* Highlight text with your brand colors */
+.highlight {
+  background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

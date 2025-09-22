@@ -12,15 +12,16 @@ module.exports = {
     extend: {
       colors: {
         // Your existing custom colors
-        primary: '#0a0a0a',
-        secondary: '#1a1a1a',
-        accent: '#E94560',
-        gold: '#FFD700',
+        primary: '#1a1a2e',
+        secondary: '#16213e',
+        accent: '#0f3460',
+        highlight: '#e94560',
+        gold: '#ffd700',
         'text-light': '#ffffff',
-        'text-muted': '#a0a0a0',
-        'highlight-color': '#E94560',
-        'gold-color': '#FFD700',
-        'gradient-accent': 'linear-gradient(135deg, #8B5CF6 0%, #06B6D4 100%)',
+        'text-muted': '#6b7280',
+        'highlight-color': '#e94560',
+        'gold-color': '#ffd700',
+        'gradient-accent': 'linear-gradient(135deg, #e94560 0%, #ff6b6b 100%)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
@@ -96,28 +97,12 @@ module.exports = {
         },
         dark: {
           colors: {
-            primary: "#E94560",
-            secondary: "#8B5CF6",
+            primary: "#e94560", // Your brand red as primary
+            secondary: "#8B5CF6", // Purple gradient color
             success: "#00C851",
-            warning: "#FFD700",
-            danger: "#E94560",
-            background: "#0a0a0a",
-            foreground: "#ffffff",
-            content1: "#1a1a1a",
-            content2: "#2a2a2a",
-            content3: "#3a3a3a",
-            content4: "#4a4a4a",
-            default: "#1a1a1a",
-            default50: "#0a0a0a",
-            default100: "#1a1a1a",
-            default200: "#2a2a2a",
-            default300: "#3a3a3a",
-            default400: "#4a4a4a",
-            default500: "#5a5a5a",
-            default600: "#6a6a6a",
-            default700: "#7a7a7a",
-            default800: "#8a8a8a",
-            default900: "#9a9a9a",
+            warning: "#ffd700", // Your gold color
+            danger: "#e94560",
+            // Let HeroUI handle the dark theme defaults
           },
         },
       },

@@ -35,7 +35,6 @@ export default function Hero() {
             <Button 
               color="primary"
               size="lg"
-              className="btn btn-primary"
               onClick={() => scrollToSection('contact')}
             >
               Start Your Project
@@ -43,7 +42,6 @@ export default function Hero() {
             <Button 
               variant="bordered"
               size="lg"
-              className="btn btn-secondary"
               onClick={() => scrollToSection('services')}
             >
               Our Services

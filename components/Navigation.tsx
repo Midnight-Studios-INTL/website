@@ -32,8 +32,9 @@ export default function Navigation() {
   return (
     <Navbar 
       onMenuOpenChange={setIsMenuOpen}
-      className={`navbar ${scrolled ? 'scrolled' : ''}`}
       maxWidth="xl"
+      isBlurred
+      className="bg-background/80 backdrop-blur-md"
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -49,7 +50,6 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
-            className="nav-link"
             onClick={() => scrollToSection('hero')}
           >
             Home
@@ -58,7 +58,6 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
-            className="nav-link"
             onClick={() => scrollToSection('services')}
           >
             Services
@@ -67,7 +66,6 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
-            className="nav-link"
             onClick={() => scrollToSection('about')}
           >
             About
@@ -76,7 +74,6 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
-            className="nav-link"
             onClick={() => scrollToSection('who-we-are')}
           >
             Who We Are
@@ -85,7 +82,6 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
-            className="nav-link"
             onClick={() => scrollToSection('portfolio')}
           >
             Work
@@ -94,7 +90,6 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
-            className="nav-link"
             onClick={() => scrollToSection('contact')}
           >
             Contact
@@ -107,7 +102,6 @@ export default function Navigation() {
           <Button 
             color="primary" 
             variant="solid"
-            className="btn btn-primary"
             onClick={() => scrollToSection('contact')}
           >
             Get Started
@@ -119,7 +113,7 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
-            className="nav-link w-full justify-start"
+            className="w-full justify-start"
             onClick={() => scrollToSection('hero')}
           >
             Home
@@ -128,7 +122,7 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
-            className="nav-link w-full justify-start"
+            className="w-full justify-start"
             onClick={() => scrollToSection('services')}
           >
             Services
@@ -137,7 +131,7 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
-            className="nav-link w-full justify-start"
+            className="w-full justify-start"
             onClick={() => scrollToSection('about')}
           >
             About
@@ -146,7 +140,7 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
-            className="nav-link w-full justify-start"
+            className="w-full justify-start"
             onClick={() => scrollToSection('who-we-are')}
           >
             Who We Are
@@ -155,7 +149,7 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
-            className="nav-link w-full justify-start"
+            className="w-full justify-start"
             onClick={() => scrollToSection('portfolio')}
           >
             Work
@@ -164,7 +158,7 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
-            className="nav-link w-full justify-start"
+            className="w-full justify-start"
             onClick={() => scrollToSection('contact')}
           >
             Contact

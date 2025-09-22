@@ -64,12 +64,14 @@ export default function Services() {
         <div className="services-grid" ref={servicesRef}>
           {services.map((service, index) => (
             <Card key={index} className="service-card" isHoverable>
-              <CardHeader className="service-icon">
-                <i className={service.icon}></i>
+              <CardHeader className="flex flex-col items-center">
+                <div className="service-icon">
+                  <i className={service.icon}></i>
+                </div>
               </CardHeader>
-              <CardBody>
-                <h3 className="service-title">{service.title}</h3>
-                <p className="service-description">{service.description}</p>
+              <CardBody className="text-center">
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-default-500">{service.description}</p>
               </CardBody>
             </Card>
           ))}
