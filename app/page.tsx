@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Services from '@/components/Services'
+import WhoWeAre from '@/components/WhoWeAre'
 import Values from '@/components/Values'
 import Portfolio from '@/components/Portfolio'
 import Contact from '@/components/Contact'
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <WhoWeAre />
       <Values />
       <Portfolio />
       <Contact />

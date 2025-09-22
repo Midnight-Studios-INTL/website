@@ -70,6 +70,14 @@ export default function Navigation() {
           <li className="nav-item">
             <a 
               className="nav-link" 
+              onClick={() => scrollToSection('who-we-are')}
+            >
+              Who We Are
+            </a>
+          </li>
+          <li className="nav-item">
+            <a 
+              className="nav-link" 
               onClick={() => scrollToSection('portfolio')}
             >
               Work
