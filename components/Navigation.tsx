@@ -34,7 +34,6 @@ export default function Navigation() {
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="xl"
       isBlurred
-      className="bg-black/80 backdrop-blur-xl border-b border-white/10"
     >
       <NavbarContent>
         <NavbarMenuToggle
@@ -46,10 +45,12 @@ export default function Navigation() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex gap-2" justify="center">
         <NavbarItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             onClick={() => scrollToSection('hero')}
           >
             Home
@@ -58,6 +59,8 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             onClick={() => scrollToSection('services')}
           >
             Services
@@ -66,6 +69,8 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             onClick={() => scrollToSection('about')}
           >
             About
@@ -74,6 +79,8 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             onClick={() => scrollToSection('who-we-are')}
           >
             Who We Are
@@ -82,6 +89,8 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             onClick={() => scrollToSection('portfolio')}
           >
             Work
@@ -90,6 +99,8 @@ export default function Navigation() {
         <NavbarItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             onClick={() => scrollToSection('contact')}
           >
             Contact
@@ -102,6 +113,8 @@ export default function Navigation() {
           <Button 
             color="primary" 
             variant="solid"
+            size="md"
+            radius="lg"
             onClick={() => scrollToSection('contact')}
           >
             Get Started
@@ -113,6 +126,8 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             className="w-full justify-start"
             onClick={() => scrollToSection('hero')}
           >
@@ -122,6 +137,8 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             className="w-full justify-start"
             onClick={() => scrollToSection('services')}
           >
@@ -131,6 +148,8 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             className="w-full justify-start"
             onClick={() => scrollToSection('about')}
           >
@@ -140,6 +159,8 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             className="w-full justify-start"
             onClick={() => scrollToSection('who-we-are')}
           >
@@ -149,6 +170,8 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             className="w-full justify-start"
             onClick={() => scrollToSection('portfolio')}
           >
@@ -158,6 +181,8 @@ export default function Navigation() {
         <NavbarMenuItem>
           <Button 
             variant="light" 
+            color="default"
+            size="md"
             className="w-full justify-start"
             onClick={() => scrollToSection('contact')}
           >

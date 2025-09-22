@@ -1382,13 +1382,7 @@ body {
   font-size: 1.25rem;
 }
 
-/* HeroUI Pro Styling - Matching Professional Examples */
-
-/* Dark theme base */
-body {
-  background: #000000 !important;
-  color: #ffffff !important;
-}
+/* HeroUI Theme - Let HeroUI handle component styling */
 
 /* Custom section backgrounds */
 .hero {
@@ -1419,77 +1413,6 @@ body {
   background: #0a0a0a;
 }
 
-/* HeroUI Pro Button Styling */
-/* Primary buttons - Modern gradient with smooth transitions */
-[data-slot="base"][data-color="primary"] {
-  background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 12px !important;
-  font-weight: 600 !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  box-shadow: 0 4px 14px 0 rgba(233, 69, 96, 0.25) !important;
-}
-
-[data-slot="base"][data-color="primary"]:hover {
-  background: linear-gradient(135deg, #d63384 0%, #e94560 100%) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 25px 0 rgba(233, 69, 96, 0.4) !important;
-}
-
-[data-slot="base"][data-color="primary"]:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 4px 14px 0 rgba(233, 69, 96, 0.25) !important;
-}
-
-/* Bordered buttons - Clean outline style */
-[data-slot="base"][data-variant="bordered"] {
-  background: transparent !important;
-  color: #e94560 !important;
-  border: 1px solid rgba(233, 69, 96, 0.3) !important;
-  border-radius: 12px !important;
-  font-weight: 500 !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-[data-slot="base"][data-variant="bordered"]:hover {
-  background: rgba(233, 69, 96, 0.1) !important;
-  border-color: #e94560 !important;
-  transform: translateY(-1px) !important;
-}
-
-/* Light variant buttons - Subtle navigation style */
-[data-slot="base"][data-variant="light"] {
-  background: transparent !important;
-  color: #a1a1aa !important;
-  border: none !important;
-  border-radius: 8px !important;
-  font-weight: 500 !important;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-[data-slot="base"][data-variant="light"]:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-  color: #ffffff !important;
-  transform: translateY(-1px) !important;
-}
-
-/* Card styling - Modern glass morphism */
-[data-slot="base"][data-variant="bordered"] {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 16px !important;
-  backdrop-filter: blur(10px) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-[data-slot="base"][data-variant="bordered"]:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(233, 69, 96, 0.3) !important;
-  transform: translateY(-4px) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
-}
-
 /* Service icons with your brand colors */
 .service-icon {
   background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%) !important;
@@ -1502,6 +1425,60 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* HeroUI Image Showcase */
+.hero-showcase {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-tech-image {
+  transition: all 0.3s ease;
+}
+
+.hero-tech-image:hover {
+  transform: scale(1.05);
+}
+
+/* Portfolio Image Styling */
+.portfolio-image {
+  position: relative;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.portfolio-project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.portfolio-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(233, 69, 96, 0.9);
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-icon-overlay {
+  background: rgba(233, 69, 96, 1);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 /* Ensure text is white in dark theme */

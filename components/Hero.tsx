@@ -1,6 +1,6 @@
 'use client'
 
-import { Button, Card, CardBody } from '@heroui/react'
+import { Button, Card, CardBody, Image } from '@heroui/react'
 import Logo from './Logo'
 
 export default function Hero() {
@@ -34,14 +34,18 @@ export default function Hero() {
           <div className="hero-buttons">
             <Button 
               color="primary"
+              variant="solid"
               size="lg"
+              radius="lg"
               onClick={() => scrollToSection('contact')}
             >
               Start Your Project
             </Button>
             <Button 
+              color="primary"
               variant="bordered"
               size="lg"
+              radius="lg"
               onClick={() => scrollToSection('services')}
             >
               Our Services
@@ -67,6 +71,22 @@ export default function Hero() {
             <div className="logo-symbol">
               <Logo size="large" showTagline={true} />
             </div>
+          </div>
+          
+          {/* HeroUI Image Component Showcase */}
+          <div className="hero-showcase">
+            <Image
+              src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop&crop=center"
+              alt="Code on screen"
+              width={300}
+              height={200}
+              radius="lg"
+              shadow="lg"
+              isBlurred
+              isZoomed
+              className="hero-tech-image"
+              fallbackSrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMUExQTFBIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSI+Q29kZSBJbWFnZTwvdGV4dD4KPC9zdmc+"
+            />
           </div>
         </div>
       </div>

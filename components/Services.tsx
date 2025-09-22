@@ -65,7 +65,7 @@ export default function Services() {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="service-card bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105" 
+              className="service-card" 
               isHoverable
               isPressable
             >
@@ -75,8 +75,8 @@ export default function Services() {
                 </div>
               </CardHeader>
               <CardBody className="text-center pt-0">
-                <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                <p className="text-default-500 text-sm leading-relaxed">{service.description}</p>
               </CardBody>
             </Card>
           ))}
