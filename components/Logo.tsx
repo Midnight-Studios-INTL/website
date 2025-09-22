@@ -89,3 +89,4 @@ export default function Logo({ size = 'medium', showTagline = false, className =
     </div>
   )
 }
+
