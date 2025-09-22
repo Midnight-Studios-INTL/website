@@ -121,15 +121,18 @@ export default function Services() {
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 backdropFilter: 'blur(10px)',
+                minHeight: '80px', // Fixed height for stability
               },
               control: {
-                padding: '1rem',
+                padding: '1.5rem',
+                minHeight: '80px', // Fixed height for control
                 '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
                 },
               },
               content: {
-                padding: '0 1rem 1rem 1rem',
+                padding: '0 1.5rem 1.5rem 1.5rem',
+                minHeight: '200px', // Fixed minimum height for content
               },
             }}
           >
@@ -146,25 +149,25 @@ export default function Services() {
                 </Group>
               </Accordion.Control>
               <Accordion.Panel>
-                <Stack gap="md">
-                  <Text c="dimmed">
+                <Stack gap="md" style={{ minHeight: '180px' }}>
+                  <Text c="dimmed" size="sm" lh={1.6}>
                     We create stunning native iOS applications using the latest SwiftUI framework and Swift programming language. 
                     Our apps are optimized for performance, accessibility, and user experience.
                   </Text>
                   <Grid>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Technologies:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Technologies:</Text>
                       <Stack gap="xs">
                         {['SwiftUI & UIKit', 'Core Data & CloudKit', 'Combine & Async/Await', 'Core ML & Vision'].map((tech) => (
-                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                          <Text key={tech} size="xs" c="dimmed">• {tech}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Features:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Features:</Text>
                       <Stack gap="xs">
                         {['App Store optimization', 'Push notifications', 'In-app purchases', 'Offline functionality'].map((feature) => (
-                          <Text key={feature} size="sm" c="dimmed">• {feature}</Text>
+                          <Text key={feature} size="xs" c="dimmed">• {feature}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
@@ -186,25 +189,25 @@ export default function Services() {
                 </Group>
               </Accordion.Control>
               <Accordion.Panel>
-                <Stack gap="md">
-                  <Text c="dimmed">
+                <Stack gap="md" style={{ minHeight: '180px' }}>
+                  <Text c="dimmed" size="sm" lh={1.6}>
                     Build powerful Android applications using Kotlin and Jetpack Compose. 
                     We ensure your app works seamlessly across all Android devices and versions.
                   </Text>
                   <Grid>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Technologies:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Technologies:</Text>
                       <Stack gap="xs">
                         {['Kotlin & Jetpack Compose', 'Room Database', 'Retrofit & OkHttp', 'Firebase Integration'].map((tech) => (
-                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                          <Text key={tech} size="xs" c="dimmed">• {tech}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Features:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Features:</Text>
                       <Stack gap="xs">
                         {['Material Design 3', 'Background services', 'Camera & sensors', 'Google Play optimization'].map((feature) => (
-                          <Text key={feature} size="sm" c="dimmed">• {feature}</Text>
+                          <Text key={feature} size="xs" c="dimmed">• {feature}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
@@ -226,25 +229,25 @@ export default function Services() {
                 </Group>
               </Accordion.Control>
               <Accordion.Panel>
-                <Stack gap="md">
-                  <Text c="dimmed">
+                <Stack gap="md" style={{ minHeight: '180px' }}>
+                  <Text c="dimmed" size="sm" lh={1.6}>
                     Create immersive FiveM roleplay servers with custom scripts, frameworks, and unique gameplay experiences. 
                     We build everything from basic resources to complex server systems.
                   </Text>
                   <Grid>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Services:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Services:</Text>
                       <Stack gap="xs">
                         {['Custom resource development', 'Server configuration', 'Database integration', 'Anti-cheat systems'].map((service) => (
-                          <Text key={service} size="sm" c="dimmed">• {service}</Text>
+                          <Text key={service} size="xs" c="dimmed">• {service}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Frameworks:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Frameworks:</Text>
                       <Stack gap="xs">
                         {['ESX & QBCore', 'vRP & Custom', 'MySQL & MongoDB', 'Discord integration'].map((framework) => (
-                          <Text key={framework} size="sm" c="dimmed">• {framework}</Text>
+                          <Text key={framework} size="xs" c="dimmed">• {framework}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
@@ -266,25 +269,25 @@ export default function Services() {
                 </Group>
               </Accordion.Control>
               <Accordion.Panel>
-                <Stack gap="md">
-                  <Text c="dimmed">
+                <Stack gap="md" style={{ minHeight: '180px' }}>
+                  <Text c="dimmed" size="sm" lh={1.6}>
                     Develop modern web applications with React, Next.js, and Node.js. 
                     We create responsive, fast, and SEO-optimized websites that deliver exceptional user experiences.
                   </Text>
                   <Grid>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Frontend:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Frontend:</Text>
                       <Stack gap="xs">
                         {['React & Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'].map((tech) => (
-                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                          <Text key={tech} size="xs" c="dimmed">• {tech}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
                     <Grid.Col span={6}>
-                      <Text fw={600} mb="sm" c="white">Backend:</Text>
+                      <Text fw={600} mb="sm" c="white" size="sm">Backend:</Text>
                       <Stack gap="xs">
                         {['Node.js & Express', 'PostgreSQL & MongoDB', 'REST & GraphQL APIs', 'Authentication & Security'].map((tech) => (
-                          <Text key={tech} size="sm" c="dimmed">• {tech}</Text>
+                          <Text key={tech} size="xs" c="dimmed">• {tech}</Text>
                         ))}
                       </Stack>
                     </Grid.Col>
