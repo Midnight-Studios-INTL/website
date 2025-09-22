@@ -1419,40 +1419,109 @@ body {
   background: #1a1a1a;
 }
 
-/* Fix HeroUI button styling for dark theme */
-.btn {
+/* Fix HeroUI button styling for dark theme - More specific selectors */
+button[data-slot="base"] {
   background: #e94560 !important;
   color: white !important;
   border: none !important;
 }
 
-.btn:hover {
+button[data-slot="base"]:hover {
+  background: #d63384 !important;
+  color: white !important;
+}
+
+/* Primary buttons */
+button[data-color="primary"] {
+  background: #e94560 !important;
+  color: white !important;
+  border: none !important;
+}
+
+button[data-color="primary"]:hover {
   background: #d63384 !important;
   color: white !important;
 }
 
 /* Bordered button styling */
-.btn[data-variant="bordered"] {
+button[data-variant="bordered"] {
   background: transparent !important;
   color: #e94560 !important;
   border: 1px solid #e94560 !important;
 }
 
-.btn[data-variant="bordered"]:hover {
+button[data-variant="bordered"]:hover {
   background: #e94560 !important;
   color: white !important;
 }
 
 /* Light variant buttons (navigation) */
-.btn[data-variant="light"] {
+button[data-variant="light"] {
   background: transparent !important;
   color: #ffffff !important;
   border: none !important;
 }
 
-.btn[data-variant="light"]:hover {
+button[data-variant="light"]:hover {
   background: rgba(233, 69, 96, 0.1) !important;
   color: #e94560 !important;
+}
+
+/* Override any HeroUI button classes */
+[class*="btn"] {
+  background: #e94560 !important;
+  color: white !important;
+  border: none !important;
+}
+
+[class*="btn"][data-variant="bordered"] {
+  background: transparent !important;
+  color: #e94560 !important;
+  border: 1px solid #e94560 !important;
+}
+
+[class*="btn"][data-variant="light"] {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* Force button styling with highest specificity */
+button[data-slot="base"][data-color="primary"] {
+  background: #e94560 !important;
+  color: white !important;
+  border: none !important;
+}
+
+button[data-slot="base"][data-variant="bordered"] {
+  background: transparent !important;
+  color: #e94560 !important;
+  border: 1px solid #e94560 !important;
+}
+
+button[data-slot="base"][data-variant="light"] {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* Target HeroUI button elements directly */
+button[class*="heroui"] {
+  background: #e94560 !important;
+  color: white !important;
+  border: none !important;
+}
+
+button[class*="heroui"][data-variant="bordered"] {
+  background: transparent !important;
+  color: #e94560 !important;
+  border: 1px solid #e94560 !important;
+}
+
+button[class*="heroui"][data-variant="light"] {
+  background: transparent !important;
+  color: #ffffff !important;
+  border: none !important;
 }
 
 /* Service icons with your brand colors */

@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
         return (
-          <html lang="en" className="dark">
+          <html lang="en" className="dark" style={{ colorScheme: 'dark' }}>
             <head>
               <link
                 rel="stylesheet"
@@ -31,8 +31,8 @@ export default function RootLayout({
                 crossOrigin="anonymous"
               />
             </head>
-            <body className={inter.className}>
-              <HeroUIProvider>
+            <body className={`${inter.className} dark`}>
+              <HeroUIProvider theme="dark">
                 {children}
               </HeroUIProvider>
             </body>
