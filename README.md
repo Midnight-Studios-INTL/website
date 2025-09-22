@@ -1,56 +1,76 @@
-# Modern Static Website
+# Modern Next.js Website
 
-A beautiful, responsive, one-page static website built with HTML, CSS, and JavaScript. Perfect for deployment on Vercel with no sign-in required.
+A beautiful, responsive, one-page website built with Next.js and React. Perfect for deployment on Vercel with full framework support and auto-detection.
 
 ## 🌟 Features
 
+- **Next.js Framework**: Built with Vercel's native framework for optimal performance
+- **React Components**: Modular, reusable components with TypeScript support
 - **Modern Design**: Clean, professional layout with gradient backgrounds and smooth animations
 - **Fully Responsive**: Optimized for all devices (desktop, tablet, mobile)
 - **Interactive Elements**: Smooth scrolling, hover effects, and form validation
-- **No Dependencies**: Pure HTML, CSS, and JavaScript - no frameworks required
-- **SEO Friendly**: Semantic HTML structure and meta tags
-- **Fast Loading**: Optimized assets and minimal external dependencies
+- **SEO Optimized**: Built-in Next.js SEO features and meta tags
+- **Fast Loading**: Next.js optimizations and static generation
 - **Accessibility**: Proper ARIA labels and keyboard navigation support
+- **Auto-Detection**: Vercel will automatically detect this as a Next.js project
 
 ## 📁 Project Structure
 
 ```
 website/
-├── index.html          # Main HTML file
-├── styles.css          # CSS styles and responsive design
-├── script.js           # JavaScript for interactivity
-├── package.json        # Node.js dependencies and scripts
-├── vercel.json         # Vercel deployment configuration
-└── README.md           # This file
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout component
+│   ├── page.tsx           # Home page component
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── Navigation.tsx     # Navigation component
+│   ├── Hero.tsx          # Hero section component
+│   ├── About.tsx         # About section component
+│   ├── Services.tsx      # Services section component
+│   ├── Portfolio.tsx     # Portfolio section component
+│   ├── Contact.tsx       # Contact section component
+│   └── Footer.tsx        # Footer component
+├── package.json          # Next.js dependencies and scripts
+├── next.config.js        # Next.js configuration
+├── tsconfig.json         # TypeScript configuration
+├── vercel.json           # Vercel deployment configuration
+└── README.md             # This file
 ```
 
 ## 🚀 Quick Deploy to Vercel
 
 ### Option 1: Deploy with Vercel CLI (Recommended)
 
-1. **Install Vercel CLI** (if not already installed):
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Install Vercel CLI** (if not already installed):
    ```bash
    npm install -g vercel
    ```
 
-2. **Login to Vercel**:
+3. **Login to Vercel**:
    ```bash
    vercel login
    ```
 
-3. **Deploy the website**:
+4. **Deploy the website**:
    ```bash
    vercel
    ```
 
-4. **Follow the prompts**:
+5. **Follow the prompts**:
    - Set up and deploy? **Y**
    - Which scope? Choose your account
    - Link to existing project? **N**
-   - What's your project's name? `modern-website` (or your preferred name)
+   - What's your project's name? `modern-nextjs-website` (or your preferred name)
    - In which directory is your code located? `./` (current directory)
 
-5. **Your website will be live** at the provided URL!
+6. **Vercel will auto-detect Next.js** and configure everything automatically!
+
+7. **Your website will be live** at the provided URL!
 
 ### Option 2: Deploy via Vercel Dashboard
 
@@ -70,42 +90,52 @@ website/
 
 4. **Import your GitHub repository**
 
-5. **Deploy** - Vercel will automatically detect it's a static site and deploy it
+5. **Vercel will auto-detect Next.js** and configure everything automatically!
+
+6. **Click "Deploy"** - Your site will be live in minutes!
 
 ### Option 3: Drag & Drop Deployment
 
-1. **Zip the project files** (index.html, styles.css, script.js, package.json, vercel.json)
+1. **Install dependencies and build**:
+   ```bash
+   npm install
+   npm run build
+   ```
 
-2. **Go to [vercel.com](https://vercel.com)**
+2. **Zip the project files** (including .next folder)
 
-3. **Drag and drop the zip file** onto the dashboard
+3. **Go to [vercel.com](https://vercel.com)**
 
-4. **Your site will be deployed instantly!**
+4. **Drag and drop the zip file** onto the dashboard
+
+5. **Vercel will detect Next.js** and deploy it!
 
 ## 🛠️ Local Development
 
 To run the website locally:
 
-1. **Clone or download this repository**
-
-2. **Open `index.html` in your browser** or use a local server:
+1. **Install dependencies**:
    ```bash
-   # Using Python (if installed)
-   python -m http.server 8000
-   
-   # Using Node.js (if installed)
-   npx serve .
-   
-   # Using Vercel CLI
-   vercel dev
+   npm install
    ```
 
-3. **Visit `http://localhost:8000`** (or the port shown)
+2. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open [http://localhost:3000](http://localhost:3000)** in your browser
+
+4. **For production build**:
+   ```bash
+   npm run build
+   npm start
+   ```
 
 ## 🎨 Customization
 
 ### Colors and Branding
-Edit the CSS variables in `styles.css`:
+Edit the CSS variables in `app/globals.css`:
 ```css
 :root {
   --primary-color: #6366f1;
@@ -116,18 +146,18 @@ Edit the CSS variables in `styles.css`:
 ```
 
 ### Content
-- **Company Name**: Update the logo text in the navigation
-- **Hero Section**: Modify the title, subtitle, and call-to-action buttons
-- **About Section**: Update company information and statistics
-- **Services**: Add or modify service offerings
-- **Portfolio**: Showcase your work and projects
-- **Contact**: Update contact information and form
+- **Company Name**: Update the logo text in `components/Navigation.tsx`
+- **Hero Section**: Modify the title, subtitle, and call-to-action buttons in `components/Hero.tsx`
+- **About Section**: Update company information and statistics in `components/About.tsx`
+- **Services**: Add or modify service offerings in `components/Services.tsx`
+- **Portfolio**: Showcase your work and projects in `components/Portfolio.tsx`
+- **Contact**: Update contact information and form in `components/Contact.tsx`
 
 ### Images
 Replace the icon placeholders with actual images:
-- Hero section graphic
-- About section image
-- Portfolio project images
+- Hero section graphic in `components/Hero.tsx`
+- About section image in `components/About.tsx`
+- Portfolio project images in `components/Portfolio.tsx`
 
 ## 📱 Responsive Breakpoints
 

@@ -1,26 +1,35 @@
 {
-  "name": "modern-static-website",
+  "name": "modern-nextjs-website",
   "version": "1.0.0",
-  "description": "A modern, responsive static website built for Vercel deployment",
-  "main": "index.html",
+  "description": "A modern, responsive website built with Next.js for Vercel deployment",
+  "private": true,
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Static site - no build step required'",
-    "start": "echo 'Static site - serve index.html'"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.0.0",
+    "typescript": "^5.0.0"
   },
   "keywords": [
-    "static",
+    "nextjs",
+    "react",
     "website",
     "responsive",
     "modern",
     "vercel"
   ],
   "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {
-    "vercel": "^32.0.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  },
+  "license": "MIT"
 }
