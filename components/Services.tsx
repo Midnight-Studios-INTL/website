@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { Card, CardBody, CardHeader } from '@heroui/react'
 
 export default function Services() {
   const servicesRef = useRef<HTMLDivElement>(null)
@@ -62,13 +63,15 @@ export default function Services() {
         </div>
         <div className="services-grid" ref={servicesRef}>
           {services.map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon">
+            <Card key={index} className="service-card" isHoverable>
+              <CardHeader className="service-icon">
                 <i className={service.icon}></i>
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
+              </CardHeader>
+              <CardBody>
+                <h3 className="service-title">{service.title}</h3>
+                <p className="service-description">{service.description}</p>
+              </CardBody>
+            </Card>
           ))}
         </div>
       </div>

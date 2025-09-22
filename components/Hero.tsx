@@ -1,5 +1,6 @@
 'use client'
 
+import { Button, Card, CardBody } from '@heroui/react'
 import Logo from './Logo'
 
 export default function Hero() {
@@ -31,18 +32,22 @@ export default function Hero() {
             and bespoke software solutions. We craft digital experiences that push boundaries and exceed expectations.
           </p>
           <div className="hero-buttons">
-            <button 
+            <Button 
+              color="primary"
+              size="lg"
               className="btn btn-primary"
               onClick={() => scrollToSection('contact')}
             >
               Start Your Project
-            </button>
-            <button 
+            </Button>
+            <Button 
+              variant="bordered"
+              size="lg"
               className="btn btn-secondary"
               onClick={() => scrollToSection('services')}
             >
               Our Services
-            </button>
+            </Button>
           </div>
         </div>
         <div className="hero-image">
