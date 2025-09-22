@@ -32,6 +32,7 @@ export default function Navigation() {
     { label: 'About', path: '/about' },
     { label: 'Who We Are', path: '/who-we-are' },
     { label: 'Work', path: '/portfolio' },
+    { label: 'Reviews', path: '/reviews' },
     { label: 'Contact', path: '/contact' },
     { label: 'FAQ', path: '/faq' },
   ]

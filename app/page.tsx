@@ -1,10 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import Footer from '@/components/Footer'
-import { Container, Title, Text, Grid, Card, Button, Box, Stack, Group, Badge, Divider, ThemeIcon, List, Center } from '@mantine/core'
-import { IconCode, IconPalette, IconDeviceMobile, IconRocket, IconAward, IconUsers, IconClock, IconShield, IconHeart, IconStar, IconTrendingUp, IconBulb, IconTarget, IconCheck } from '@tabler/icons-react'
+import ReviewStats from '@/components/ReviewStats'
+import ReviewDisplay from '@/components/ReviewDisplay'
+import ReviewForm from '@/components/ReviewForm'
+import { Container, Title, Text, Grid, Card, Button, Box, Stack, Group, Badge, Divider, ThemeIcon, List, Center, Tabs } from '@mantine/core'
+import { IconCode, IconPalette, IconDeviceMobile, IconRocket, IconAward, IconUsers, IconClock, IconShield, IconHeart, IconStar, IconTrendingUp, IconBulb, IconTarget, IconCheck, IconMessageCircle, IconPlus } from '@tabler/icons-react'
 import { useRouter } from 'next/navigation'
 
 export default function Home() {
@@ -41,12 +45,7 @@ export default function Home() {
     }
   ]
 
-  const stats = [
-    { number: '50+', label: 'Projects Completed' },
-    { number: '25+', label: 'Happy Clients' },
-    { number: '3+', label: 'Years Experience' },
-    { number: '100%', label: 'Client Satisfaction' }
-  ]
+  const [refreshReviews, setRefreshReviews] = useState(0)
 
   const values = [
     {
@@ -71,51 +70,24 @@ export default function Home() {
     }
   ]
 
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'CEO, TechStart Inc.',
-      content: 'Midnight Studios transformed our digital presence completely. Their attention to detail and Christian values made the entire process smooth and trustworthy.',
-      rating: 5
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Founder, Digital Solutions',
-      content: 'Working with a team that shares our values was refreshing. The quality of work exceeded our expectations.',
-      rating: 5
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Marketing Director, Growth Co.',
-      content: 'Professional, reliable, and faith-driven. They delivered our project on time and within budget.',
-      rating: 5
-    }
-  ]
 
   return (
     <main>
       <Navigation />
       <Hero />
       
-      {/* Stats Section */}
+      {/* Real Review Stats Section */}
       <Box py="60px" style={{ backgroundColor: '#0a0a0a' }}>
         <Container size="xl">
-          <Grid gutter="xl">
-            {stats.map((stat, index) => (
-              <Grid.Col key={index} span={{ base: 6, md: 3 }}>
-                <Card shadow="sm" padding="xl" radius="md" style={{ backgroundColor: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(233, 69, 96, 0.2)' }}>
-                  <Stack align="center" gap="sm">
-                    <Title order={2} size="2.5rem" c="#e94560">
-                      {stat.number}
-                    </Title>
-                    <Text ta="center" c="dimmed" size="sm">
-                      {stat.label}
-                    </Text>
-                  </Stack>
-                </Card>
-              </Grid.Col>
-            ))}
-          </Grid>
+          <Stack align="center" gap="xl">
+            <Title order={2} size="2.5rem" ta="center" c="white">
+              What Our Clients Say
+            </Title>
+            <Text size="lg" ta="center" c="dimmed" maw="600px">
+              Real statistics based on actual client reviews and feedback.
+            </Text>
+            <ReviewStats />
+          </Stack>
         </Container>
       </Box>
 
@@ -218,50 +190,37 @@ export default function Home() {
         </Container>
       </Box>
 
-      {/* Testimonials Section */}
+      {/* Real Reviews Section */}
       <Box py="80px" style={{ backgroundColor: '#000000' }}>
         <Container size="xl">
           <Stack align="center" gap="xl">
             <Title order={2} size="2.5rem" ta="center" c="white">
-              What Our Clients Say
+              Client Reviews
             </Title>
             <Text size="lg" ta="center" c="dimmed" maw="600px">
-              Don't just take our word for it - hear from our satisfied clients.
+              Real feedback from our satisfied clients. Share your experience too!
             </Text>
             
-            <Grid gutter="xl" mt="xl">
-              {testimonials.map((testimonial, index) => (
-                <Grid.Col key={index} span={{ base: 12, md: 4 }}>
-                  <Card 
-                    shadow="sm" 
-                    padding="xl" 
-                    radius="md" 
-                    withBorder 
-                    h="100%"
-                    style={{ 
-                      backgroundColor: 'rgba(255, 255, 255, 0.05)', 
-                      border: '1px solid rgba(233, 69, 96, 0.2)'
-                    }}
-                  >
-                    <Stack gap="md" h="100%">
-                      <Group>
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <IconStar key={i} size="1rem" fill="#ffd700" color="#ffd700" />
-                        ))}
-                      </Group>
-                      <Text c="dimmed" style={{ flex: 1, fontStyle: 'italic' }}>
-                        "{testimonial.content}"
-                      </Text>
-                      <Divider />
-                      <Stack gap="xs">
-                        <Text fw={600} c="white">{testimonial.name}</Text>
-                        <Text size="sm" c="dimmed">{testimonial.role}</Text>
-                      </Stack>
-                    </Stack>
-                  </Card>
-                </Grid.Col>
-              ))}
-            </Grid>
+            <Tabs defaultValue="reviews" variant="pills" style={{ width: '100%' }}>
+              <Tabs.List justify="center" mb="xl">
+                <Tabs.Tab value="reviews" leftSection={<IconMessageCircle size="1rem" />}>
+                  View Reviews
+                </Tabs.Tab>
+                <Tabs.Tab value="submit" leftSection={<IconPlus size="1rem" />}>
+                  Submit Review
+                </Tabs.Tab>
+              </Tabs.List>
+
+              <Tabs.Panel value="reviews">
+                <ReviewDisplay limit={6} showLoadMore={true} />
+              </Tabs.Panel>
+
+              <Tabs.Panel value="submit">
+                <Container size="md">
+                  <ReviewForm onReviewSubmitted={() => setRefreshReviews(prev => prev + 1)} />
+                </Container>
+              </Tabs.Panel>
+            </Tabs>
           </Stack>
         </Container>
       </Box>

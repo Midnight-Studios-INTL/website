@@ -39,6 +39,7 @@ export default function Footer() {
               <li><a onClick={() => navigateToPage('/about')}>About</a></li>
               <li><a onClick={() => navigateToPage('/services')}>Services</a></li>
               <li><a onClick={() => navigateToPage('/portfolio')}>Portfolio</a></li>
+              <li><a onClick={() => navigateToPage('/reviews')}>Reviews</a></li>
               <li><a onClick={() => navigateToPage('/contact')}>Contact</a></li>
               <li><a onClick={() => navigateToPage('/faq')}>FAQ</a></li>
             </ul>
